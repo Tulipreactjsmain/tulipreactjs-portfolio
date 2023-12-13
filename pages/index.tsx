@@ -24,7 +24,7 @@ export default function Home() {
             className="name"
             as={`h1`}
             fontWeight={"bold"}
-            fontSize={{ base: "5xl", md: `7xl`, lg: `7xl` }}
+            fontSize={{ base: "5xl", md: `6rem`, lg: `6rem` }}
             opacity={0}
           >
             Solomon Adesanya
