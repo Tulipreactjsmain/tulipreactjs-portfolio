@@ -1,12 +1,19 @@
-import "@/styles/globals.scss";
+import "@/sass/globals.scss";
 import type { AppProps } from "next/app";
-import { HeadMetaData } from "@/components";
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "@/utils/customTheme";
+import { HeadMetaData, Navbar, Layout } from "@/components";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <HeadMetaData />
-      <Component {...pageProps} />
+      <ChakraProvider theme={theme}>
+        <Layout>
+          <Navbar />
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
     </>
   );
 }
