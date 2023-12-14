@@ -80,6 +80,7 @@ const Navbar: React.FC = () => {
             colorScheme="body"
             className={`hamburger hamburger--elastic-r ${show && "is-active"}`}
             type="button"
+            padding={0}
           >
             <span className="hamburger-box">
               <span className="hamburger-inner"></span>
