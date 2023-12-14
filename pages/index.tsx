@@ -18,6 +18,7 @@ export default function Home() {
         setPlayState(false);
       }, 1000);
     }, 5000);
+
     elementRefs.push(elementRef);
     gsapMethods({ elementRefs: elementRefs });
     return () => clearInterval(intervalId);
@@ -26,7 +27,7 @@ export default function Home() {
   return (
     <>
       <main className={`${styles.main} ${inter.className}`}>
-        <VStack ref={elementRef} alignItems={`flex-start`} py={`7rem`}>
+        <VStack ref={elementRef} gap={0} alignItems={`flex-start`} py={`24`}>
           <Box position={`relative`}>
             <span
               style={{ padding: "2px", opacity: 0 }}
@@ -37,17 +38,19 @@ export default function Home() {
               display={`inline-block`}
               zIndex={5}
               className="hi"
-              // px={`0.5rem`}
             ></Text>
           </Box>
 
           <Heading
-            className="name"
+            className="name polySans"
             as={`h1`}
             width={"100%"}
             fontWeight={"bold"}
             fontSize={{ base: "15vw", md: `16vw`, lg: `11rem` }}
             opacity={0}
+            lineHeight={1}
+            letterSpacing={`tight`}
+            mb={`1rem`}
           >
             <span className="letterHover" style={{ display: "flex" }}>
               <span>S</span>
@@ -77,7 +80,14 @@ export default function Home() {
               <div className="flip-text-back"></div>
             </span>
           </Heading>
-          <Text className="occupation" opacity={0} fontWeight={`bold`} color={`#B7AD8F`} fontSize={`4xl`}>
+          <Text
+            className="occupation polySans"
+            lineHeight={1.1}
+            fontWeight={`bold`}
+            opacity={0}
+            color={`#B7AD8F`}
+            fontSize={`4xl`}
+          >
             UI engineer & server-side developer
           </Text>
 
@@ -86,6 +96,7 @@ export default function Home() {
             gap={`20`}
             justifyContent={`space-between`}
             w={`full`}
+            pt={5}
           >
             <Box
               className="about"

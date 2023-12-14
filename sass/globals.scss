@@ -1,4 +1,17 @@
 @import "./hamburger";
+@font-face {
+  font-family: "PolySans Median";
+  src: url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.eot");
+  src: url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.svg#PolySans Median")format("svg");
+}
+
+.polySans {
+  font-family:  "PolySans Median" !important;
+}
 
 :root {
   --max-width: 1100px;

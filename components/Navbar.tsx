@@ -48,7 +48,9 @@ const Navbar: React.FC = () => {
             <span>Projects</span>
           </Link>
           <Link
-            href={`/#resume`}
+            href="https://drive.google.com/file/d/1R7NEhAM5OhOI4Vs2e1_7y0yJaX4it50a/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ display: "flex", alignItems: "center", gap: "9px" }}
           >
             <span>
