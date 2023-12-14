@@ -15,6 +15,11 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
       ref.current?.querySelector("div.about");
     const hiHighlight: Element | null | undefined =
       ref.current?.querySelector("span.hiHighlight");
+    const occupation: Element | null | undefined =
+      ref.current?.querySelector("p.occupation");
+      
+      console.log(occupation);
+      
 
     let botTl = gsap.timeline();
 
@@ -52,6 +57,13 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
       ease: "elastic.out(1,0.2)",
       y: 0,
     });
+    gsap.to(occupation as Element, {
+        duration: 2.5,
+        delay: 3,
+        opacity: 1,
+        ease: "power1.out",
+        y: 0,
+      });
     gsap.from(about as Element, {
       duration: 0.8,
       opacity: 0,

@@ -28,11 +28,14 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <VStack ref={elementRef} alignItems={`flex-start`} py={`7rem`}>
           <Box position={`relative`}>
-            <span style={{ padding: "2px", opacity:0 }} className="hiHighlight"></span>
+            <span
+              style={{ padding: "2px", opacity: 0 }}
+              className="hiHighlight"
+            ></span>
             <Text
               position={`relative`}
               display={`inline-block`}
-              zIndex={5} 
+              zIndex={5}
               className="hi"
               // px={`0.5rem`}
             ></Text>
@@ -43,7 +46,7 @@ export default function Home() {
             as={`h1`}
             width={"100%"}
             fontWeight={"bold"}
-            fontSize={{ base: "18vw", md: `16vw`, lg: `12rem` }}
+            fontSize={{ base: "15vw", md: `16vw`, lg: `11rem` }}
             opacity={0}
           >
             <span className="letterHover" style={{ display: "flex" }}>
@@ -74,6 +77,9 @@ export default function Home() {
               <div className="flip-text-back"></div>
             </span>
           </Heading>
+          <Text className="occupation" opacity={0} fontWeight={`bold`} color={`#B7AD8F`} fontSize={`4xl`}>
+            UI engineer & server-side developer
+          </Text>
 
           <Flex
             flexWrap={`wrap`}
