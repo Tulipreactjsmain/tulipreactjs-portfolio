@@ -1,10 +1,4 @@
 @import "./hamburger";
-:root {
-  --max-width: 1100px;
-  --sweet-green: #188e39;
-  --sweet-green-support: #537344;
-  --satin-sheen-gold-light: #e7dfc6;
-}
 @font-face {
   font-family: "PolySans Median";
   src: url("../fonts/cec88e5a4cf367c4620cd23c5a184439.eot"),
@@ -18,9 +12,15 @@
   font-weight: normal;
   font-style: normal;
 }
+:root {
+  --max-width: 1100px;
+  --sweet-green: #188e39;
+  --sweet-green-support: #537344;
+  --satin-sheen-gold-light: #e7dfc6;
+}
 
 .polySans {
-  font-family: "PolySans Median", 'Lilita One' sans-serif !important;
+  font-family: "PolySans Median", "Lilita One" sans-serif !important;
 }
 
 * {
@@ -42,7 +42,16 @@ body {
     color: #e9f1f7;
   }
 }
-
+.letterHover {
+  word-break: break-all !important;
+  display: flex;
+  flex-wrap: wrap;
+  span {
+    word-break: break-word;
+    word-break: break-all;
+    
+  }
+}
 .letterHover {
   span:hover {
     color: #7c7c6f;
@@ -118,8 +127,8 @@ body {
 
 .flip-text {
   transform-style: preserve-3d;
-  animation: flipAnimation 1s infinite ease-in-out;
-  animation-play-state: paused;
+  animation: flipAnimation 2s infinite ease-in-out;
+  // animation-play-state: paused;
 }
 @keyframes shineAnimation {
 }

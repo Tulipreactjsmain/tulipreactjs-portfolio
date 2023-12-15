@@ -1,10 +1,7 @@
-import { Inter } from "next/font/google";
 import { useRef, useEffect, useState } from "react";
 import styles from "@/sass/Home.module.scss";
 import gsapMethods from "@/utils/gsapMethods";
 import { Heading, VStack, Text, Box, Flex } from "@chakra-ui/react";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [playState, setPlayState] = useState<boolean>(false);
@@ -26,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={`${styles.main}`}>
         <VStack ref={elementRef} gap={0} alignItems={`flex-start`} py={`24`}>
           <Box position={`relative`}>
             <span
@@ -46,17 +43,17 @@ export default function Home() {
             as={`h1`}
             width={"100%"}
             fontWeight={"bold"}
-            fontSize={{ base: "15vw", md: `16vw`, lg: `11rem` }}
+            fontSize={{ base: "4rem", md: `16vw`, lg: `11rem` }}
             opacity={0}
             lineHeight={1}
-            letterSpacing={`tight`}
+            letterSpacing={`-0.035em`}
             mb={`1rem`}
           >
-            <span className="letterHover" style={{ display: "flex" }}>
+            <span className="letterHover">
               <span>S</span>
               <span>o</span>
               <span>l</span>
-              <span style={{color:"#7c7c6f"}}>o</span>
+              <span style={{ color: "#7c7c6f" }}>o</span>
               <span>m</span>
               <span>o</span>
               <span>n</span>
@@ -83,10 +80,10 @@ export default function Home() {
           <Text
             className="occupation polySans"
             lineHeight={1.1}
-            fontWeight={`bold`}
+            fontFamily={`PolySans Median`}
             opacity={0}
             color={`#B7AD8F`}
-            fontSize={`4xl`}
+            fontSize={`5xl`}
           >
             UI engineer & server-side developer
           </Text>
