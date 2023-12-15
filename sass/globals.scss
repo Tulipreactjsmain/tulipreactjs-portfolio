@@ -1,22 +1,26 @@
 @import "./hamburger";
-@font-face {
-  font-family: "PolySans Median";
-  src: url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.eot");
-  src: url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/cec88e5a4cf367c4620cd23c5a184439.svg#PolySans Median")format("svg");
-}
-
-.polySans {
-  font-family:  "PolySans Median" !important;
-}
-
 :root {
   --max-width: 1100px;
   --sweet-green: #188e39;
   --sweet-green-support: #537344;
+  --satin-sheen-gold-light: #e7dfc6;
+}
+@font-face {
+  font-family: "PolySans Median";
+  src: url("../fonts/cec88e5a4cf367c4620cd23c5a184439.eot"),
+    url("../fonts/cec88e5a4cf367c4620cd23c5a184439.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/cec88e5a4cf367c4620cd23c5a184439.woff2") format("woff2"),
+    url("../fonts/cec88e5a4cf367c4620cd23c5a184439.woff") format("woff"),
+    url("../fonts/cec88e5a4cf367c4620cd23c5a184439.ttf") format("truetype"),
+    url("../fonts/cec88e5a4cf367c4620cd23c5a184439.svg#PolySansMedian")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.polySans {
+  font-family: "PolySans Median", sans-serif !important;
 }
 
 * {
@@ -45,6 +49,10 @@ body {
   }
 }
 
+.letterHover > span:nth-child(4):hover {
+  color: var(--satin-sheen-gold-light) !important;
+}
+
 .hiHighlight {
   position: absolute;
   bottom: 0;
@@ -56,6 +64,7 @@ body {
   );
   height: 0;
   z-index: 1;
+  animation: shineAnimation 2s infinite;
 }
 
 .btn41-43 {
@@ -101,7 +110,6 @@ body {
     color: #13181f;
     transition: all 0.2s ease-in-out;
   }
-
 }
 
 .flip-container {
@@ -113,7 +121,8 @@ body {
   animation: flipAnimation 1s infinite ease-in-out;
   animation-play-state: paused;
 }
-
+@keyframes shineAnimation {
+}
 @keyframes flipAnimation {
   0% {
     transform: rotateY(0deg);
@@ -144,3 +153,48 @@ body {
     justify-content: flex-start !important;
   }
 }
+
+// <div><span></span></div>
+//shine animation
+
+// /* blue bar */
+// div {
+//   height:220px;
+//   width:100%;
+//   background:#59cce0;
+//   z-index:0;
+//   position: relative;
+// }
+
+// /* text */
+
+// /* Shine */
+// div:after {
+// 	content:'';
+//   top:0;
+// 	transform:translateX(100%);
+// 	width:100%;
+// 	height:220px;
+// 	position: absolute;
+// 	z-index:1;
+// 	animation: slide 1s infinite;
+
+//   /*
+//   CSS Gradient - complete browser support from http://www.colorzilla.com/gradient-editor/
+//   */
+//   background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(128,186,232,0) 99%, rgba(125,185,232,0) 100%); /* FF3.6+ */
+// 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.8)), color-stop(99%,rgba(128,186,232,0)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
+// 	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
+// 	background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
+// 	background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* IE10+ */
+// 	background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* W3C */
+// 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 */
+// }
+
+// /* animation */
+
+// @keyframes slide {
+// 	0% {transform:translateX(-100%);}
+// 	50% {transform:translateX(50%);}
+//   100% {transform:translateX(100%);}
+// }

@@ -20,7 +20,7 @@ const theme: CustomThemeConfig = extendTheme({
     },
   },
   fonts: {
-    heading: `'harmattan', sans-serif`,
+    heading: `'PolySans Median', sans-serif`,
     body: `'Inter', sans-serif`,
   },
   fontSizes: {

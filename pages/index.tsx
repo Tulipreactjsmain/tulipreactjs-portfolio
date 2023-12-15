@@ -56,7 +56,7 @@ export default function Home() {
               <span>S</span>
               <span>o</span>
               <span>l</span>
-              <span>o</span>
+              <span style={{color:"#7c7c6f"}}>o</span>
               <span>m</span>
               <span>o</span>
               <span>n</span>
