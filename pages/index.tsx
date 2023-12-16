@@ -1,30 +1,31 @@
 import { useRef, useEffect, useState } from "react";
 import styles from "@/sass/Home.module.scss";
 import gsapMethods from "@/utils/gsapMethods";
-import { Heading, VStack, Text, Box, Flex } from "@chakra-ui/react";
+import useScroll from "@/hooks/gsapUseScroll";
+import { TbSTurnDown } from "react-icons/tb";
+import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 
 export default function Home() {
   const [playState, setPlayState] = useState<boolean>(false);
   const elementRef = useRef<HTMLDivElement | null>(null);
   const elementRefs: React.RefObject<HTMLDivElement>[] = [];
-
+  const contextRef = elementRef;
+  
+  useScroll(contextRef);
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setPlayState((prev) => !prev);
-      setTimeout(() => {
-        setPlayState(false);
-      }, 1000);
-    }, 5000);
-
     elementRefs.push(elementRef);
     gsapMethods({ elementRefs: elementRefs });
-    return () => clearInterval(intervalId);
   }, []);
 
   return (
     <>
-      <main className={`${styles.main}`}>
-        <VStack ref={elementRef} gap={0} alignItems={`flex-start`} py={`24`}>
+      <main ref={elementRef} className={`${styles.main}`}>
+        <VStack
+          className="vStack"
+          gap={0}
+          alignItems={`flex-start`}
+          pt={`9rem`}
+        >
           <Box position={`relative`}>
             <span
               style={{ padding: "2px", opacity: 0 }}
@@ -44,12 +45,12 @@ export default function Home() {
             width={"100%"}
             fontWeight={"bold"}
             fontSize={{ base: "4rem", md: `16vw`, lg: `11rem` }}
-            opacity={0}
+            opacity={1}
             lineHeight={1}
             letterSpacing={`-0.035em`}
             mb={`1rem`}
           >
-            <span className="letterHover">
+            <span className="firstName letterHover">
               <span>S</span>
               <span>o</span>
               <span>l</span>
@@ -90,7 +91,7 @@ export default function Home() {
 
           <Flex
             flexWrap={`wrap`}
-            gap={`20`}
+            // gap={`20`}
             justifyContent={`space-between`}
             w={`full`}
             pt={5}
@@ -111,14 +112,24 @@ export default function Home() {
             >
               {/* I'm fueled by 🎨 design systems, user engagement, backend
               architecture, and the decentralized web (web3). */}
-              Web Developer with the sauce.
+              <Text fontSize={`1rem`}>Web Developer with the sauce.</Text>
             </Box>
 
-            <Box color={`#7c7c6f`} fontSize={`1.2rem`} mt={`2rem`}>
-              {/* Still thinking of what should be here...{" "} */}
+            <Box
+              display={`flex`}
+              justifyContent={`space-between`}
+              alignItems={`center`}
+              color={`#7c7c6f`}
+              mt={`2rem`}
+              gap={20}
+              fontSize={`xl`}
+            >
+              <Text></Text>
+              <Text>Sroll down</Text> <TbSTurnDown />
             </Box>
           </Flex>
         </VStack>
+        <Container w={500} h={500}></Container>
       </main>
     </>
   );

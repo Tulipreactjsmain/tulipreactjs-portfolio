@@ -18,8 +18,6 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
     const occupation: Element | null | undefined =
       ref.current?.querySelector("p.occupation");
       
-      console.log(occupation);
-      
 
     let botTl = gsap.timeline();
 
