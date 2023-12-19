@@ -5,7 +5,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return <Container maxW={`7xl`} p={`3vw`}>{children}</Container>;
+  return <Container position={`relative`} maxW={`7xl`} p={`3vw`}>{children}</Container>;
 };
 
 export default Layout;
