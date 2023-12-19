@@ -29,7 +29,7 @@ export default function Home() {
           h={`100vh`}
         >
           <Box w={`full`}>
-            <Box position={`relative`}>
+            <Box position={`relative`} className="introText">
               <span
                 style={{ padding: "2px", opacity: 0 }}
                 className="hiHighlight"
@@ -101,7 +101,7 @@ export default function Home() {
               pt={5}
             >
               <Box
-                className="about"
+                className="slog"
                 maxW={{ base: `90%`, md: `40%`, lg: `40%` }}
                 opacity={0}
                 mt={`2rem`}
@@ -135,7 +135,7 @@ export default function Home() {
           </Box>
         </VStack>
         <Container w={500} h={500}></Container>
-        {/* <About/> */}
+        <About/>
       </main>
     </>
   );

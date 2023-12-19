@@ -15,6 +15,7 @@ const Navbar: React.FC = () => {
       <HamburgerMenu show={show} setShow={setShow} />
       <Flex
         position={`fixed`}
+        zIndex={5000}
         w={`full`}
         right={0}
         left={0}

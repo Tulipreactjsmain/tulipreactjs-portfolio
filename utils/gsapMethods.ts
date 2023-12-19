@@ -11,8 +11,11 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
     const hi: Element | null | undefined = ref.current?.querySelector("p.hi");
     const name: Element | null | undefined =
       ref.current?.querySelector("h1.name");
-    const about: Element | null | undefined =
-      ref.current?.querySelector("div.about");
+    const slog: Element | null | undefined =
+      ref.current?.querySelector("div.slog");
+
+      console.log(slog);
+      
     const hiHighlight: Element | null | undefined =
       ref.current?.querySelector("span.hiHighlight");
     const occupation: Element | null | undefined =
@@ -62,13 +65,13 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
         ease: "power1.out",
         y: 0,
       });
-    gsap.from(about as Element, {
+    gsap.from(slog as Element, {
       duration: 0.8,
       opacity: 0,
       x: -150,
       delay: 3.5,
     });
-    gsap.to(about as Element, {
+    gsap.to(slog as Element, {
       duration: 0.8,
       opacity: 1,
       ease: "power1.out",
