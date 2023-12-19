@@ -29,12 +29,21 @@
   margin: 0;
 }
 
+* ::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #13181f;
+  position: relative;
+  // background-color: #13181f;
+}
+
+.vStack {
+  padding-bottom: 0 !important;
 }
 
 .navLinks {
@@ -49,7 +58,6 @@ body {
   span {
     word-break: break-word;
     word-break: break-all;
-    
   }
 }
 .letterHover {
@@ -129,6 +137,7 @@ body {
 .flip-text {
   transform-style: preserve-3d;
   animation: flipAnimation 2s infinite ease-in-out;
+  animation-delay: 5s !important;
   // animation-play-state: paused;
 }
 @keyframes shineAnimation {
