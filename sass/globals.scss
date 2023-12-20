@@ -39,6 +39,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
+  overscroll-behavior: none;
   // background-color: #13181f;
 }
 

@@ -3,5 +3,6 @@ import Navbar from "./Navbar";
 import Layout from "./Layout";
 import HamburgerMenu from "./HamburgerMenu";
 import About from "./About";
+import Magnifier from "./Magnifier";
 
-export { HeadMetaData, Navbar, Layout, HamburgerMenu, About };
+export { HeadMetaData, Navbar, Layout, HamburgerMenu, About, Magnifier };

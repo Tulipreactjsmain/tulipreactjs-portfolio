@@ -13,8 +13,6 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
       ref.current?.querySelector("h1.name");
     const slog: Element | null | undefined =
       ref.current?.querySelector("div.slog");
-
-      console.log(slog);
       
     const hiHighlight: Element | null | undefined =
       ref.current?.querySelector("span.hiHighlight");

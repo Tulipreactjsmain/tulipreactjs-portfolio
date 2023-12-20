@@ -1,10 +1,17 @@
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 const useScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
+  const router = useRouter();
+  const pathname = usePathname()
   useEffect(() => {
+    const isPathname = pathname === "/";
+    const isLargeScreen = window.innerWidth > 1024;
+    const isMediumScreen = window.innerWidth <= 1024 && window.innerWidth > 768;
+
     let ctx = gsap.context(() => {
       const tween1 = gsap.to(".firstName", {
         x: -800,
@@ -37,6 +44,7 @@ const useScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
         opacity: 1,
         duration: 3,
         ease: `power4.Out`,
+        zIndex: 2000,
       });
 
       const timeline = gsap.timeline();
@@ -48,13 +56,13 @@ const useScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
 
       ScrollTrigger.create({
         trigger: ".vStack",
-        start: `32% 30%,`,
+        start: `${isLargeScreen ? "24.7%" : isMediumScreen ? "28%" : "29%"} 30%,`,
         end: "100% 30% ",
         pin: true,
         pinSpacing: false,
 
         animation: timeline,
-        scrub: 1,
+        scrub: 1.5,
         // markers: true,
         invalidateOnRefresh: true,
       });

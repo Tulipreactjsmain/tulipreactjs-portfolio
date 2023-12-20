@@ -27,6 +27,8 @@ export default function Home() {
           alignItems={`flex-start`}
           pt={`9rem`}
           h={`100vh`}
+          position={`static`}
+          zIndex={1000}
         >
           <Box w={`full`}>
             <Box position={`relative`} className="introText">
@@ -135,7 +137,7 @@ export default function Home() {
           </Box>
         </VStack>
         <Container w={500} h={500}></Container>
-        <About/>
+        <About />
       </main>
     </>
   );

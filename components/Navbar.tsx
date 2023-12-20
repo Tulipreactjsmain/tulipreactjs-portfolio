@@ -27,8 +27,9 @@ const Navbar: React.FC = () => {
           justifyContent={`space-between`}
           maxW={`7xl`}
           px={`3vw`}
-          alignItems={`center`}
           w={`full`}
+          alignItems={`center`}
+         
         >
           <Link href={`/`}>
             <Box
