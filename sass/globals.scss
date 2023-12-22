@@ -100,6 +100,7 @@ body {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 
 .btn-43 {
@@ -114,7 +115,6 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  border-radius: 5px;
   background: rgb(255, 255, 240);
   transition: all 0.3s ease;
 }
@@ -131,13 +131,16 @@ body {
 
 .update-nav-btn {
   border: solid rgb(183, 173, 143) !important;
-
+  color: rgb(255, 255, 240);
   &:hover {
-    color: rgb(255, 255, 240) !important;
+    color: rgb(255, 255, 240);
   }
 }
 
 .update-nav-btn:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
   background: rgb(183, 173, 143) !important;
 }
 

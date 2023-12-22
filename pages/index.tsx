@@ -7,7 +7,9 @@ import { About, Navbar } from "@/components";
 import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 
 export default function Home() {
-  const [isGradientBg, setIsGradientBg] = useState<Element | null | undefined>();
+  const [isGradientBg, setIsGradientBg] = useState<
+    Element | null | undefined
+  >();
   const elementRef = useRef<HTMLDivElement | null>(null);
   const elementRefs: React.RefObject<HTMLDivElement>[] = [];
   const contextRef = elementRef;
@@ -16,16 +18,14 @@ export default function Home() {
   useEffect(() => {
     elementRefs.push(elementRef);
     gsapMethods({ elementRefs: elementRefs });
-    const gradientBgElement = elementRef?.current?.querySelector(
-      "div.about"
-    );
+    const gradientBgElement = elementRef?.current?.querySelector("div.about");
     setIsGradientBg(gradientBgElement);
   }, []);
 
   return (
     <>
       <main ref={elementRef} className={`${styles.main}`}>
-        <Navbar isGradientBg = {isGradientBg} />
+        <Navbar isGradientBg={isGradientBg} />
         <VStack
           className="vStack"
           gap={0}
@@ -135,13 +135,13 @@ export default function Home() {
                 gap={20}
                 fontSize={`xl`}
               >
-                <Text></Text>
                 <Text>Sroll down</Text> <TbSTurnDown />
               </Box>
             </Flex>
           </Box>
         </VStack>
-        <Container w={`34.722vw`} h={`61.5006vh`}></Container>
+        {/* <Container w={`full`} maxW={`7xl`} h={`300.5006vh`} color={`black`}></Container> */}
+        <Container w={`full`} maxW={`7xl`} h={`61.500vh`}></Container>
         <About />
       </main>
     </>
