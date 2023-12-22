@@ -49,7 +49,13 @@ body {
 
 .navLinks {
   a:hover {
-    color: #e9f1f7;
+    color: rgb(255, 255, 240);
+  }
+}
+
+.update-nav-links {
+  a:hover {
+    color: rgb(183, 173, 143) !important;
   }
 }
 .letterHover {
@@ -109,7 +115,7 @@ body {
   left: 0;
   z-index: -1;
   border-radius: 5px;
-  background: rgb(233, 241, 247);
+  background: rgb(255, 255, 240);
   transition: all 0.3s ease;
 }
 
@@ -123,9 +129,21 @@ body {
   height: 100%;
 }
 
-.slog{
+.update-nav-btn {
+  border: solid rgb(183, 173, 143) !important;
+
   &:hover {
-    background-color: rgb(233, 241, 247);
+    color: rgb(255, 255, 240) !important;
+  }
+}
+
+.update-nav-btn:after {
+  background: rgb(183, 173, 143) !important;
+}
+
+.slog {
+  &:hover {
+    background-color: rgb(255, 255, 240);
     color: #13181f;
     transition: all 0.2s ease-in-out;
   }

@@ -1,14 +1,14 @@
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
-const useScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
-  const router = useRouter();
-  const pathname = usePathname()
+const useScroll = (
+  contextRef: React.RefObject<HTMLDivElement | HTMLButtonElement | null>
+) => {
   useEffect(() => {
-    const isPathname = pathname === "/";
+    const navBtn = contextRef?.current?.querySelector("button.btn-43");
+    const navLinks = contextRef?.current?.querySelector("div.navLinks");
     const isLargeScreen = window.innerWidth > 1024;
     const isMediumScreen = window.innerWidth <= 1024 && window.innerWidth > 768;
 
@@ -28,9 +28,9 @@ const useScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
       });
 
       const tween3 = gsap.to(".title", {
-        y: 700,
+        y: 200,
         opacity: 0,
-        duration: 3,
+        duration: 1,
         ease: `power4.Out`,
       });
 
@@ -47,23 +47,48 @@ const useScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
         zIndex: 2000,
       });
 
+      // const bodyTween = gsap.to(body, {
+      //   backgroundColor: "#FFFFF0",
+      //   duration: 3,
+      // });
+      // const hamburgerTween = gsap.to(
+      //   ".hamburger-inner",
+      //   {
+      //     backgroundColor: "white",
+      //     duration: 1,
+      //   }
+      // );
       const timeline = gsap.timeline();
       timeline.add(tween1, 0);
       timeline.add(tween2, 0);
       timeline.add(tween3, 0);
       timeline.add(tween4, 0);
       timeline.add(tween5, 0);
+      // timeline.add(bodyTween, 0);
+      // timeline.add(hamburgerTween, 0);
 
       ScrollTrigger.create({
         trigger: ".vStack",
-        start: `${isLargeScreen ? "24.7%" : isMediumScreen ? "28%" : "29%"} 30%,`,
+        start: `${
+          isLargeScreen ? "24.7%" : isMediumScreen ? "28%" : "29%"
+        } 30%,`,
         end: "100% 30% ",
         pin: true,
         pinSpacing: false,
-
         animation: timeline,
-        scrub: 1.5,
+        scrub: 2,
         // markers: true,
+        onUpdate: (self) => {
+          console.log("self", self);
+
+          if (self.progress > 0.5) {
+            navBtn?.classList.add("update-nav-btn");
+            navLinks?.classList.add("update-nav-links");
+          } else {
+            navBtn?.classList.remove("update-nav-btn");
+            navLinks?.classList.remove("update-nav-links");
+          }
+        },
         invalidateOnRefresh: true,
       });
     }, contextRef);

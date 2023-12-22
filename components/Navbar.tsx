@@ -4,16 +4,21 @@ import { HiMiniRectangleStack } from "react-icons/hi2";
 import { CiMemoPad } from "react-icons/ci";
 import { FaConnectdevelop } from "react-icons/fa";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HamburgerMenu } from ".";
 
+interface navBarProps {
+  isGradientBg: Element | null | undefined;
+}
 const inter = Inter({ subsets: ["latin"], weight: "400" });
-const Navbar: React.FC = () => {
+const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
   const [show, setShow] = useState<boolean>(false);
+
   return (
     <>
       <HamburgerMenu show={show} setShow={setShow} />
       <Flex
+        className="navBar"
         position={`fixed`}
         zIndex={5000}
         w={`full`}
@@ -29,7 +34,6 @@ const Navbar: React.FC = () => {
           px={`3vw`}
           w={`full`}
           alignItems={`center`}
-         
         >
           <Link href={`/`}>
             <Box
@@ -37,7 +41,8 @@ const Navbar: React.FC = () => {
               overflow={`hidden`}
               w={`40px`}
               h={`40px`}
-              border={`solid #E7DFC6 2px`}
+              color="#B7AD8F"
+              border={`solid 2px`}
               p={`3px`}
               bg={`black`}
             >
@@ -54,6 +59,7 @@ const Navbar: React.FC = () => {
             justifyContent={`space-between`}
             alignItems={`center`}
             gap={10}
+            color={`#B7AD8F`}
           >
             <Link
               href={`/#projects`}
@@ -65,7 +71,7 @@ const Navbar: React.FC = () => {
               <span>Projects</span>
             </Link>
             <Link
-              href="https://drive.google.com/file/d/1R7NEhAM5OhOI4Vs2e1_7y0yJaX4it50a/view?usp=drive_link"
+              href="https://drive.google.com/file/d/11fWAtq2K3siewP4Z3BM5fCTS2X2kwekI/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "9px" }}
@@ -102,6 +108,7 @@ const Navbar: React.FC = () => {
               }`}
               type="button"
               padding={0}
+              color={`#E7DFC6`}
             >
               <span className="hamburger-box">
                 <span className="hamburger-inner"></span>

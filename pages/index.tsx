@@ -3,11 +3,11 @@ import styles from "@/sass/Home.module.scss";
 import gsapMethods from "@/utils/gsapMethods";
 import useScroll from "@/hooks/gsapUseScroll";
 import { TbSTurnDown } from "react-icons/tb";
-import { About } from "@/components";
+import { About, Navbar } from "@/components";
 import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 
 export default function Home() {
-  const [playState, setPlayState] = useState<boolean>(false);
+  const [isGradientBg, setIsGradientBg] = useState<Element | null | undefined>();
   const elementRef = useRef<HTMLDivElement | null>(null);
   const elementRefs: React.RefObject<HTMLDivElement>[] = [];
   const contextRef = elementRef;
@@ -16,11 +16,16 @@ export default function Home() {
   useEffect(() => {
     elementRefs.push(elementRef);
     gsapMethods({ elementRefs: elementRefs });
+    const gradientBgElement = elementRef?.current?.querySelector(
+      "div.about"
+    );
+    setIsGradientBg(gradientBgElement);
   }, []);
 
   return (
     <>
       <main ref={elementRef} className={`${styles.main}`}>
+        <Navbar isGradientBg = {isGradientBg} />
         <VStack
           className="vStack"
           gap={0}
@@ -75,7 +80,7 @@ export default function Home() {
                 <span>d</span>
                 <span>e</span>
                 <span>s</span>
-                <span className={`flip-text ${playState && "active"}`}>a</span>
+                <span className={`flip-text active"}`}>a</span>
                 <span>n</span>
                 <span>y</span>
                 <span>a</span>
@@ -136,7 +141,7 @@ export default function Home() {
             </Flex>
           </Box>
         </VStack>
-        <Container w={500} h={500}></Container>
+        <Container w={`34.722vw`} h={`61.5006vh`}></Container>
         <About />
       </main>
     </>

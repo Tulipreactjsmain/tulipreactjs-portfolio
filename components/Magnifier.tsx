@@ -1,4 +1,4 @@
-import React, { useState, ReactNode, useRef, useEffect } from "react";
+import React, { useState, ReactNode } from "react";
 import PropTypes from "prop-types";
 import { Box, Text } from "@chakra-ui/react";
 interface MagnifierProps {
@@ -12,38 +12,9 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
   const [showMagnifier, setShowMagnifier] = useState(false);
   const [isMagnifierVisible, setIsMagnifierVisible] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const magnifierRef = useRef(null);
 
-  console.log("isMagnifierVisible", isMagnifierVisible);
-  console.log(magnifierRef.current);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          console.log("entry.isIntersecting", entry.isIntersecting);
-
-          entry.isIntersecting
-            ? setIsMagnifierVisible(entry.isIntersecting)
-            : setIsMagnifierVisible(false);
-        });
-      },
-      {
-        root: children && (children as React.ReactElement)?.props.ref?.current,
-        threshold: 0.5,
-      }
-    );
-
-    if (magnifierRef.current) {
-      observer.observe(magnifierRef.current);
-    }
-
-    return () => {
-      if (magnifierRef.current) {
-        observer.unobserve(magnifierRef.current);
-      }
-    };
-  }, [children]);
+  //   console.log("isMagnifierVisible", isMagnifierVisible);
+  //   console.log(magnifierRef.current);
 
   const handleMouseHover = (e: React.MouseEvent) => {
     const { left, top, width, height } =
@@ -72,7 +43,6 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
       {children}
       {showMagnifier ? (
         <Box
-          ref={magnifierRef}
           className="magnifier-container"
           style={{
             position: "absolute",
@@ -84,14 +54,14 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
         >
           <Box
             className="magnifier-item"
-            width={`35vw`}
-            h={`35vw`}
+            width={`10vw`}
+            h={`10vw`}
             border={`solid`}
             rounded={`100%`}
             style={{
-              backgroundImage: `url(${
+              backgroundImage: `url('${
                 (children as React.ReactElement)?.props.src
-              })`,
+              }')`,
               backgroundPosition: `${position.x}% ${position.y}%`,
             }}
           />
@@ -110,6 +80,7 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
             zIndex={100}
             right={0}
             bottom={0}
+            color={`#B7AD8F`}
           >
             <Text textAlign={`end`} maxW={`7xl`} p={`3vw`} w={`full`}>
               Move Cursor

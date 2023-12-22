@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <HeadMetaData />
       <ChakraProvider theme={theme}>
         <Layout>
-          <Navbar />
+          {/* <Navbar /> */}
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>

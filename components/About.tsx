@@ -1,4 +1,4 @@
-import { Box, Text, Image } from "@chakra-ui/react";
+import { Box, Text, Image, Container} from "@chakra-ui/react";
 import { Magnifier } from ".";
 
 const About: React.FC = () => {
@@ -18,32 +18,44 @@ const About: React.FC = () => {
         position={`fixed`}
         zIndex={0}
         h={`100vh`}
-        backgroundColor={`#101419`}
+        backgroundColor={`#FFFFF0`}
+        color={`#B7AD8F`}
       >
-        <Box height={`full`} width={`full`}>
+        <Box
+          className="gradientBackground"
+          height={`full`}
+          width={`full`}
+        >
           <Magnifier>
-            <Image
+            {/* <Image
               height={`full`}
               width={`full`}
               src="/abstract-binary-code-background.webp"
-              opacity={0.1}
-            />
+              opacity={0}
+            /> */}
+
+            <></>
           </Magnifier>
 
           <Box
-          w={`full`}
+            w={`full`}
             position={`absolute`}
             transform={`translate(-50%, -50%)`}
             left={`50%`}
             top={`50%`}
-            fontSize={{ base: `2xl`, md: `3xl`, lg: `5xl` }}
+            zIndex={200}
+            fontSize={{ base: `3xl`, md: `5xl`, lg: `4rem` }}
             textAlign={`center`}
             fontWeight={`bold`}
+            // color={`white`}
           >
-            <Text>I'm a "P e r f e c t i o n" chaser</Text>
+            <Text fontFamily={`'PolySans Median'`}>
+              I am a maestro of <br /> exactitude.
+            </Text>
           </Box>
         </Box>
       </Box>
+    
     </Box>
   );
 };
