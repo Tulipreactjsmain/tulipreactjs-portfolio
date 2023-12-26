@@ -33,8 +33,18 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
       onMouseEnter={() => setShowMagnifier(true)}
       onMouseLeave={() => setShowMagnifier(false)}
       onMouseMove={handleMouseHover}
+      color={`#7c7c6f`}
     >
+      <Box
+        w={`full`}
+        h={`full`}
+        zIndex={100}
+        position={`absolute`}
+        bgGradient="linear(to bottom right, var(--sweet-green-support) 1%, rgba(191, 77, 54, 1) 10%, #BF4D36 1%, rgba(191, 77, 54, 0) 35%, rgba(0, 0, 0, 0) 70%, #476C9B)"
+        opacity={0.5}
+      ></Box>
       {children}
+
       {showMagnifier ? (
         <>
           <Box
@@ -49,9 +59,14 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
             zIndex={100}
             right={0}
             bottom={0}
-            color={`#B7AD8F`}
           >
-            <Text textAlign={`end`} maxW={`7xl`} p={`3vw`} w={`full`}>
+            <Text
+             fontWeight={`bold`}
+             textAlign={`end`}
+             maxW={`7xl`}
+             p={`3vw`}
+             w={`full`}
+            >
               Sroll down
             </Text>
           </Box>
@@ -93,10 +108,15 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
           zIndex={100}
           right={0}
           bottom={0}
-          color={`#B7AD8F`}
         >
           {showMagnifier === false && (
-            <Text textAlign={`end`} maxW={`7xl`} p={`3vw`} w={`full`}>
+            <Text
+              fontWeight={`bold`}
+              textAlign={`end`}
+              maxW={`7xl`}
+              p={`3vw`}
+              w={`full`}
+            >
               Move Cursor
             </Text>
           )}

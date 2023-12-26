@@ -4,7 +4,10 @@ import gsapMethods from "@/utils/gsapMethods";
 import useScroll from "@/hooks/gsapUseScroll";
 import { TbSTurnDown } from "react-icons/tb";
 import { About, Navbar } from "@/components";
+import GradientGithubIcon from "@/components/GradientGithubIcon";
+import { PiGithubLogoFill } from "react-icons/pi";
 import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function Home() {
   const [isGradientBg, setIsGradientBg] = useState<
@@ -59,14 +62,31 @@ export default function Home() {
               letterSpacing={`-0.035em`}
               mb={`1rem`}
             >
-              <span className="firstName letterHover">
-                <span>S</span>
-                <span>o</span>
-                <span>l</span>
-                <span style={{ color: "#7c7c6f" }}>o</span>
-                <span>m</span>
-                <span>o</span>
-                <span>n</span>
+              <span
+                className="firstName"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <span className="letterHover">
+                  <span>S</span>
+                  <span>o</span>
+                  <span>l</span>
+                  <span style={{ color: "#7c7c6f" }}>o</span>
+                  <span>m</span>
+                  <span>o</span>
+                  <span>n</span>
+                </span>
+                <Link
+                  href={`https://github.com/Tulipreactjsmain`}
+                  className="letterHover"
+                >
+                  <GradientGithubIcon />
+                </Link>
+
+                {/* <PiGithubLogoFill/> */}
               </span>
               <span
                 className="surname letterHover flip-container"

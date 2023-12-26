@@ -1,5 +1,10 @@
-import { Box, Text, Image, Container } from "@chakra-ui/react";
+import { Box, Text, Icon, Link } from "@chakra-ui/react";
 import { Magnifier } from ".";
+// import { TbMichelinStarGreen } from "react-icons/tb";
+import { GiMouthWatering } from "react-icons/gi";
+import { TbMichelinStarGreen } from "react-icons/tb";
+import { PhoneIcon } from "@chakra-ui/icons";
+import GradientGithubIcon from "./GradientGithubIcon";
 
 const About: React.FC = () => {
   return (
@@ -20,10 +25,15 @@ const About: React.FC = () => {
         zIndex={0}
         h={`full`}
         backgroundColor={`#FFFFF0`}
-        color={`#B7AD8F`}
+        color={`#7c7c6f`}
       >
         <Magnifier>
-          <Box className="gradientBackground" height={`full`} width={`full`}>
+          <Box
+            className="gradientBackground"
+            height={`full`}
+            width={`full`}
+            position={`relative`}
+          >
             {/* <Image
               height={`full`}
               width={`full`}
@@ -33,6 +43,10 @@ const About: React.FC = () => {
             <Box
               w={`full`}
               h={`full`}
+              backgroundImage={
+                "linear-gradient(to right, rgba(16, 20, 25, 0.1) 2px, transparent 1px)"
+              }
+              backgroundSize={"100px 100%"}
               position={`absolute`}
               transform={`translate(-50%, -50%)`}
               left={`50%`}
@@ -61,6 +75,22 @@ const About: React.FC = () => {
                 rounded={`10%`}
                 boxShadow={`md`}
               ></Box>
+            </Box>
+            <Box
+              w={`full`}
+              maxW={`7xl`}
+              transform={`translate(-50%, -0%)`}
+              left={`50%`}
+              position={`absolute`}
+              zIndex={200}
+              bottom={0}
+              px={`3vw`}
+            >
+              <Box py={`3vw`} fontSize={`5xl`} color={`green`}>
+                <Link href="https://github.com/Tulipreactjsmain">
+                  <GradientGithubIcon />
+                </Link>
+              </Box>
             </Box>
           </Box>
         </Magnifier>

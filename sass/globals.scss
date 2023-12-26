@@ -14,8 +14,8 @@
 }
 :root {
   --max-width: 1100px;
-  --sweet-green: #188e39;
-  --sweet-green-support: #537344;
+  --sweet-green: #356c45;
+  --sweet-green-support: #222e1d;
   --satin-sheen-gold-light: #e7dfc6;
 }
 
@@ -84,7 +84,9 @@ body {
   background: linear-gradient(
     114.41deg,
     var(--sweet-green) 20.74%,
-    var(--sweet-green-support) 65.5%
+    var(--sweet-green-support) 45.5%,
+    #9d4d3d,
+
   );
   height: 0;
   z-index: 1;
@@ -130,7 +132,7 @@ body {
 }
 
 .update-nav-btn {
-  border: solid rgb(183, 173, 143) !important;
+  border: solid #7c7c6f !important;
   color: rgb(255, 255, 240);
   &:hover {
     color: rgb(255, 255, 240);
@@ -141,7 +143,7 @@ body {
   top: auto;
   bottom: 0;
   height: 100%;
-  background: rgb(183, 173, 143) !important;
+  background: #7c7c6f !important;
 }
 
 .slog {
@@ -160,7 +162,31 @@ body {
   transform-style: preserve-3d;
   animation: flipAnimation 2s infinite ease-in-out;
   animation-delay: 5s !important;
-  // animation-play-state: paused;
+}
+// .gradient-heart-icon {
+//   fill: url(#gradient) !important; 
+// }
+// .gradient-heart-icon {
+//   background: linear-gradient(
+//     to right,
+//     var(--sweet-green-support),
+//     #bf4d36,
+//     var(--sweet-green)
+//   ) !important;
+//   -webkit-background-clip: text;
+//   background-clip: text !important;
+//   color: transparent !important;
+// }
+.custom-icon {
+  background: linear-gradient(
+    to right,
+    var(--sweet-green-support),
+    #bf4d36,
+    var(--sweet-green)
+  ) !important;
+  -webkit-background-clip: text;
+  background-clip: text !important;
+  color: transparent !important;
 }
 @keyframes shineAnimation {
 }
@@ -194,48 +220,3 @@ body {
     justify-content: flex-start !important;
   }
 }
-
-// <div><span></span></div>
-//shine animation
-
-// /* blue bar */
-// div {
-//   height:220px;
-//   width:100%;
-//   background:#59cce0;
-//   z-index:0;
-//   position: relative;
-// }
-
-// /* text */
-
-// /* Shine */
-// div:after {
-// 	content:'';
-//   top:0;
-// 	transform:translateX(100%);
-// 	width:100%;
-// 	height:220px;
-// 	position: absolute;
-// 	z-index:1;
-// 	animation: slide 1s infinite;
-
-//   /*
-//   CSS Gradient - complete browser support from http://www.colorzilla.com/gradient-editor/
-//   */
-//   background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(128,186,232,0) 99%, rgba(125,185,232,0) 100%); /* FF3.6+ */
-// 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.8)), color-stop(99%,rgba(128,186,232,0)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
-// 	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
-// 	background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
-// 	background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* IE10+ */
-// 	background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* W3C */
-// 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 */
-// }
-
-// /* animation */
-
-// @keyframes slide {
-// 	0% {transform:translateX(-100%);}
-// 	50% {transform:translateX(50%);}
-//   100% {transform:translateX(100%);}
-// }

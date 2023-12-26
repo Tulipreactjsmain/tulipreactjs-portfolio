@@ -26,6 +26,8 @@ const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
         left={0}
         alignItems={`center`}
         justifyContent={`center`}
+        color={`#7c7c6f`}
+       
       >
         <Box
           display={`flex`}
@@ -41,7 +43,7 @@ const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
               overflow={`hidden`}
               w={`40px`}
               h={`40px`}
-              color="#B7AD8F"
+              // color="#B7AD8F"
               border={`solid 2px`}
               p={`3px`}
               bg={`black`}
@@ -59,7 +61,8 @@ const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
             justifyContent={`space-between`}
             alignItems={`center`}
             gap={10}
-            color={`#B7AD8F`}
+            fontWeight={`bold`}
+            // color={`#B7AD8F`}
           >
             <Link
               href={`/#projects`}
@@ -82,7 +85,7 @@ const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
               <span>Resume</span>
             </Link>
 
-            <Box display={`flex`} alignItems={`center`} gap={`9px`}>
+            <Box display={`flex`} alignItems={`center`} gap={`9px`} >
               <FaConnectdevelop />
               <Button
                 colorScheme="body"
@@ -108,7 +111,7 @@ const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
               }`}
               type="button"
               padding={0}
-              color={`#E7DFC6`}
+              color={`#7c7c6f`}
             >
               <span className="hamburger-box">
                 <span className="hamburger-inner"></span>
