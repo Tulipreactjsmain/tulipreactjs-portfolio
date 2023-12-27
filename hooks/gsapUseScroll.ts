@@ -63,7 +63,7 @@ const useScroll = (
         pin: true,
         animation: timeline,
         scrub: 2,
-        markers: true,
+        // markers: true,
         onUpdate: (self) => {
           if (self.progress > 0.5) {
             navBtn?.classList.add("update-nav-btn");
