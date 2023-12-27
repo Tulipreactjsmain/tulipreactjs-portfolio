@@ -32,7 +32,7 @@ const useAboutPageScroll = (
           start: "bottom+=100vh 30%",
           end: "bottom+=500vh 30%",
           scrub: 5,
-          markers: true,
+          // markers: true,
           animation: timeline,
         });
       }, contextRef);
