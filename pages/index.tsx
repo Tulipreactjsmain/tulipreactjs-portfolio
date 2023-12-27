@@ -1,50 +1,50 @@
-import { useRef, useEffect, useState } from "react";
-import styles from "@/sass/Home.module.scss";
+import { useRef, useEffect } from "react";
 import gsapMethods from "@/utils/gsapMethods";
-import useScroll from "@/hooks/gsapUseScroll";
+import { useScroll, useAboutPageScroll } from "@/hooks";
 import { TbSTurnDown } from "react-icons/tb";
-import { About, Navbar } from "@/components";
-import GradientGithubIcon from "@/components/GradientGithubIcon";
-import { PiGithubLogoFill } from "react-icons/pi";
+import { About, Navbar, GradientGithubIcon } from "@/components";
 import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 import Link from "next/link";
 
 export default function Home() {
-  const [isGradientBg, setIsGradientBg] = useState<
-    Element | null | undefined
-  >();
   const elementRef = useRef<HTMLDivElement | null>(null);
   const elementRefs: React.RefObject<HTMLDivElement>[] = [];
   const contextRef = elementRef;
 
   useScroll(contextRef);
+  useAboutPageScroll(contextRef);
   useEffect(() => {
     elementRefs.push(elementRef);
     gsapMethods({ elementRefs: elementRefs });
-    const gradientBgElement = elementRef?.current?.querySelector("div.about");
-    setIsGradientBg(gradientBgElement);
   }, []);
 
   return (
     <>
-      <main ref={elementRef} className={`${styles.main}`}>
-        <Navbar isGradientBg={isGradientBg} />
+      <main ref={elementRef} className={`main`}>
+        <Navbar />
         <VStack
-          className="vStack"
+          className="section vStack"
           gap={0}
           alignItems={`flex-start`}
-          pt={`9rem`}
+          // justifyContent={`center`}
+          pt={{ base: `9rem`, md: `15rem`, lg: `9rem` }}
           h={`100vh`}
           position={`static`}
           zIndex={1000}
         >
           <Box w={`full`}>
-            <Box position={`relative`} className="introText">
+            <Box
+              position={`relative`}
+              boxShadow={`lg white`}
+              className="introText"
+            >
               <span
                 style={{ padding: "2px", opacity: 0 }}
                 className="hiHighlight"
               ></span>
+
               <Text
+                fontSize={`large`}
                 position={`relative`}
                 display={`inline-block`}
                 zIndex={5}
@@ -83,10 +83,8 @@ export default function Home() {
                   href={`https://github.com/Tulipreactjsmain`}
                   className="letterHover"
                 >
-                  <GradientGithubIcon />
+                  <GradientGithubIcon displayValue={`block`} />
                 </Link>
-
-                {/* <PiGithubLogoFill/> */}
               </span>
               <span
                 className="surname letterHover flip-container"
@@ -160,9 +158,16 @@ export default function Home() {
             </Flex>
           </Box>
         </VStack>
-        {/* <Container w={`full`} maxW={`7xl`} h={`300.5006vh`} color={`black`}></Container> */}
-        <Container w={`full`} maxW={`7xl`} h={`61.500vh`}></Container>
         <About />
+        <Box
+          className=""
+          w={`full`}
+          maxW={`7xl`}
+          h={`200.5006vh`}
+          // textAlign={`center`}
+        ></Box>
+
+        {/* <Container w={`full`} maxW={`7xl`} h={`61.500vh`}></Container> */}
       </main>
     </>
   );

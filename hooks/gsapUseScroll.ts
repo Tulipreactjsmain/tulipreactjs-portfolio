@@ -47,25 +47,12 @@ const useScroll = (
         zIndex: 2000,
       });
 
-      // const bodyTween = gsap.to(body, {
-      //   backgroundColor: "#FFFFF0",
-      //   duration: 3,
-      // });
-      // const hamburgerTween = gsap.to(
-      //   ".hamburger-inner",
-      //   {
-      //     backgroundColor: "white",
-      //     duration: 1,
-      //   }
-      // );
       const timeline = gsap.timeline();
       timeline.add(tween1, 0);
       timeline.add(tween2, 0);
       timeline.add(tween3, 0);
       timeline.add(tween4, 0);
       timeline.add(tween5, 0);
-      // timeline.add(bodyTween, 0);
-      // timeline.add(hamburgerTween, 0);
 
       ScrollTrigger.create({
         trigger: ".vStack",
@@ -74,13 +61,10 @@ const useScroll = (
         } 30%,`,
         end: "100% 30% ",
         pin: true,
-        pinSpacing: false,
         animation: timeline,
         scrub: 2,
-        // markers: true,
+        markers: true,
         onUpdate: (self) => {
-          console.log("self", self);
-
           if (self.progress > 0.5) {
             navBtn?.classList.add("update-nav-btn");
             navLinks?.classList.add("update-nav-links");

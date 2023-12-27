@@ -33,7 +33,7 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
       .to(hiHighlight as Element, {
         duration: 1,
         delay: 3.2,
-        height: "22px",
+        // height: "22px",
         ease: `elastic.out`,
       });
     gsap.to(hi as Element, {

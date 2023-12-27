@@ -36,6 +36,7 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
       color={`#7c7c6f`}
     >
       <Box
+        className="blur"
         w={`full`}
         h={`full`}
         zIndex={100}
@@ -61,11 +62,11 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
             bottom={0}
           >
             <Text
-             fontWeight={`bold`}
-             textAlign={`end`}
-             maxW={`7xl`}
-             p={`3vw`}
-             w={`full`}
+              fontWeight={`bold`}
+              textAlign={`end`}
+              maxW={`7xl`}
+              p={`3vw`}
+              w={`full`}
             >
               Sroll down
             </Text>

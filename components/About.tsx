@@ -1,16 +1,12 @@
-import { Box, Text, Icon, Link } from "@chakra-ui/react";
+import { Box, Text, Container, Link } from "@chakra-ui/react";
 import { Magnifier } from ".";
-// import { TbMichelinStarGreen } from "react-icons/tb";
-import { GiMouthWatering } from "react-icons/gi";
-import { TbMichelinStarGreen } from "react-icons/tb";
-import { PhoneIcon } from "@chakra-ui/icons";
-import GradientGithubIcon from "./GradientGithubIcon";
-
+import { GradientGithubIcon } from ".";
 const About: React.FC = () => {
   return (
     <Box position={`relative`} color={`#B7AD8F`}>
       <Box
         className="about"
+        id="about"
         cursor={`-webkit-grab`}
         w={`100%`}
         opacity={0}
@@ -23,7 +19,7 @@ const About: React.FC = () => {
         right={0}
         position={`fixed`}
         zIndex={0}
-        h={`full`}
+        h={`100vh`}
         backgroundColor={`#FFFFF0`}
         color={`#7c7c6f`}
       >
@@ -66,7 +62,7 @@ const About: React.FC = () => {
                 rounded={`100%`}
                 boxShadow={`md`}
               ></Box>
-              <Text fontFamily={`'PolySans Median'`} pt={10} pb={20}>
+              <Text w={`50rem`} maxW={`70vw`}  className="aboutIntroText" fontFamily={`'PolySans Median'`} id="aboutIntroText" pt={10} pb={20}>
                 I am a maestro of <br /> exactitude.
               </Text>
               <Box
@@ -88,13 +84,14 @@ const About: React.FC = () => {
             >
               <Box py={`3vw`} fontSize={`5xl`} color={`green`}>
                 <Link href="https://github.com/Tulipreactjsmain">
-                  <GradientGithubIcon />
+                  <GradientGithubIcon displayValue={`none`} />
                 </Link>
               </Box>
             </Box>
           </Box>
         </Magnifier>
       </Box>
+      
     </Box>
   );
 };

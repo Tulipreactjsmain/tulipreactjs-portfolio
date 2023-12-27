@@ -7,11 +7,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { HamburgerMenu } from ".";
 
-interface navBarProps {
-  isGradientBg: Element | null | undefined;
-}
 const inter = Inter({ subsets: ["latin"], weight: "400" });
-const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
+const Navbar: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
 
   return (
@@ -27,7 +24,6 @@ const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
         alignItems={`center`}
         justifyContent={`center`}
         color={`#7c7c6f`}
-       
       >
         <Box
           display={`flex`}
@@ -85,7 +81,7 @@ const Navbar: React.FC<navBarProps> = ({ isGradientBg }) => {
               <span>Resume</span>
             </Link>
 
-            <Box display={`flex`} alignItems={`center`} gap={`9px`} >
+            <Box display={`flex`} alignItems={`center`} gap={`9px`}>
               <FaConnectdevelop />
               <Button
                 colorScheme="body"
