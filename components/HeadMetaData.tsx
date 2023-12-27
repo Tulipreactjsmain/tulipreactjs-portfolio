@@ -18,10 +18,10 @@ const HeadMetaData: React.FC = function () {
         property="og:description"
         content="Passionate about designing intuitive user interfaces and building scalable applications for an exceptional user experience."
       />
-      {/* <meta property="og:image" content="/coverImage.webp" /> */}
+      <meta property="og:image" content="/Mywebsitefrontpage.png" />
       <meta property="og:url" content="https://tulipreactjs.vercel.app/" />
       <meta property="og:site_name" content="Solomon Adesanya" />
-      {/* <meta name="twitter:card" content="/coverImage.webp" /> */}
+      <meta name="twitter:card" content="/Mywebsitefrontpage.png" />
       <meta
         name="twitter:title"
         content="Solomon Adesanya (aka Tulipman) - Software Engineer"
@@ -30,7 +30,7 @@ const HeadMetaData: React.FC = function () {
         name="twitter:description"
         content="Passionate about designing intuitive user interfaces and building scalable applications for an exceptional user experience."
       />
-      {/* <meta name="twitter:image" content="/coverImage.webp" /> */}
+      <meta name="twitter:image" content="/Mywebsitefrontpage.png" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
