@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import PropTypes from "prop-types";
 import { Box, Text } from "@chakra-ui/react";
 interface MagnifierProps {
@@ -6,6 +6,7 @@ interface MagnifierProps {
 }
 
 const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
+  const [scrollDegree, setScrollDegree] = useState(90);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [showMagnifier, setShowMagnifier] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -24,6 +25,25 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
     children: PropTypes.node.isRequired,
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const normalizedScroll = Math.min(1, scrollPosition / maxScroll); 
+      const newDegree = scrollDegree + normalizedScroll * (360 - scrollDegree);
+
+      setScrollDegree(newDegree);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const linearGradient = `linear(${scrollDegree}deg, var(--sweet-green-support) 1%, rgba(191, 77, 54, 1) 10%, #BF4D36 1%, rgba(191, 77, 54, 0) 35%, rgba(0, 0, 0, 0) 70%, #476C9B)`;
+
   return (
     <Box
       className="magnifier-container"
@@ -36,13 +56,13 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
       color={`#7c7c6f`}
     >
       <Box
-        className="blur"
+        className="animateGradient"
         w={`full`}
         h={`full`}
         zIndex={100}
         position={`absolute`}
-        bgGradient="linear(to bottom right, var(--sweet-green-support) 1%, rgba(191, 77, 54, 1) 10%, #BF4D36 1%, rgba(191, 77, 54, 0) 35%, rgba(0, 0, 0, 0) 70%, #476C9B)"
-        opacity={0.5}
+        opacity={0.4}
+        bgGradient={linearGradient}
       ></Box>
       {children}
 

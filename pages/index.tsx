@@ -163,7 +163,7 @@ export default function Home() {
           className=""
           w={`full`}
           maxW={`7xl`}
-          h={`200.5006vh`}
+          h={`300.5006vh`}
           // textAlign={`center`}
         ></Box>
 
