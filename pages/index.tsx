@@ -1,8 +1,17 @@
 import { useRef, useEffect } from "react";
 import gsapMethods from "@/utils/gsapMethods";
-import { useScroll, useAboutPageScroll } from "@/hooks";
+import {
+  useScroll,
+  useAboutPageScroll,
+  useFtProjsScrollEffects,
+} from "@/hooks";
 import { TbSTurnDown } from "react-icons/tb";
-import { About, Navbar, GradientGithubIcon } from "@/components";
+import {
+  About,
+  Navbar,
+  GradientGithubIcon,
+  FeaturedProjects,
+} from "@/components";
 import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 import Link from "next/link";
 
@@ -13,6 +22,7 @@ export default function Home() {
 
   useScroll(contextRef);
   useAboutPageScroll(contextRef);
+  useFtProjsScrollEffects(contextRef);
   useEffect(() => {
     elementRefs.push(elementRef);
     gsapMethods({ elementRefs: elementRefs });
@@ -23,10 +33,10 @@ export default function Home() {
       <main ref={elementRef} className={`main`}>
         <Navbar />
         <VStack
+        id="hero"
           className="section vStack"
           gap={0}
           alignItems={`flex-start`}
-          // justifyContent={`center`}
           pt={{ base: `9rem`, md: `15rem`, lg: `9rem` }}
           h={`100vh`}
           position={`static`}
@@ -120,7 +130,6 @@ export default function Home() {
 
             <Flex
               flexWrap={`wrap`}
-              // gap={`20`}
               justifyContent={`space-between`}
               w={`full`}
               pt={5}
@@ -130,7 +139,6 @@ export default function Home() {
                 maxW={{ base: `90%`, md: `40%`, lg: `40%` }}
                 opacity={0}
                 mt={`2rem`}
-                // fontSize={`1.2rem`}
                 display={`flex`}
                 flexWrap={`wrap`}
                 alignItems={`center`}
@@ -139,8 +147,6 @@ export default function Home() {
                 px={`1rem`}
                 cursor={`pointer`}
               >
-                {/* I'm fueled by 🎨 design systems, user engagement, backend
-              architecture, and the decentralized web (web3). */}
                 <Text fontSize={`1rem`}>Web Developer with the sauce.</Text>
               </Box>
 
@@ -159,15 +165,13 @@ export default function Home() {
           </Box>
         </VStack>
         <About />
-        <Box
+        <FeaturedProjects />
+        <Container
           className=""
           w={`full`}
           maxW={`7xl`}
-          h={`300.5006vh`}
-          // textAlign={`center`}
-        ></Box>
-
-        {/* <Container w={`full`} maxW={`7xl`} h={`61.500vh`}></Container> */}
+          h={`800.5006vh`}
+        ></Container>
       </main>
     </>
   );

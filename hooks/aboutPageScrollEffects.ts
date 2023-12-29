@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +43,26 @@ const useAboutPageScroll = (
           },
         });
 
+        gsap.to(".round-circle", {
+          duration: 2.5,
+          y: 25,
+          rotation: 360,
+          ease: "none",
+          transformOrigin: "center center",
+          repeat: -1,
+          yoyo: true,
+        });
+
+        gsap.to(".square-box", {
+          duration: 2.5,
+          y: 25,
+          rotation: 360,
+          ease: "none",
+          transformOrigin: "center center",
+          repeat: -1,
+          yoyo: true,
+        });
+
         timeline.add(tween2, 0);
 
         ScrollTrigger.create({
@@ -62,7 +82,7 @@ const useAboutPageScroll = (
 
 export default useAboutPageScroll;
 
-// const tween3 = gsap.to(".animateGradient", {
+// const tween3 = gsap.to(".round-circle", {
 //   duration: 2.5,
 //   rotation: 360, // Rotate 360 degrees
 //   ease: "none", // Linear rotation

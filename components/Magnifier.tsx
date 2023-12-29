@@ -27,7 +27,7 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+      const scrollPosition = window.scrollY;      
       const maxScroll = document.body.scrollHeight - window.innerHeight;
       const normalizedScroll = Math.min(1, scrollPosition / maxScroll); 
       const newDegree = scrollDegree + normalizedScroll * (360 - scrollDegree);

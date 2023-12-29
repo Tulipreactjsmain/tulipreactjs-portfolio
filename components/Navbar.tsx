@@ -3,14 +3,29 @@ import { Inter } from "next/font/google";
 import { HiMiniRectangleStack } from "react-icons/hi2";
 import { CiMemoPad } from "react-icons/ci";
 import { FaConnectdevelop } from "react-icons/fa";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+// import Link from "next/link";
+import {
+  Link,
+  Link as ScrollLink,
+  animateScroll as scroll,
+} from "react-scroll";
+import { useState } from "react";
 import { HamburgerMenu } from ".";
 
 const inter = Inter({ subsets: ["latin"], weight: "400" });
 const Navbar: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
 
+  const scrollToProjects = () => {
+    scroll.scrollTo(5260, {
+      smooth: "easeInOutQuad",
+    });
+  };
+  // const scrollTohome = () => {
+  //   scroll.scrollTo(5260, {
+  //     smooth: "easeInOutQuad",
+  //   });
+  // };
   return (
     <>
       <HamburgerMenu show={show} setShow={setShow} />
@@ -33,7 +48,7 @@ const Navbar: React.FC = () => {
           w={`full`}
           alignItems={`center`}
         >
-          <Link href={`/`}>
+          <Link to="hero" onClick={() => scroll.scrollTo(1)}>
             <Box
               rounded={`100%`}
               overflow={`hidden`}
@@ -58,18 +73,22 @@ const Navbar: React.FC = () => {
             alignItems={`center`}
             gap={10}
             fontWeight={`bold`}
-            // color={`#B7AD8F`}
           >
-            <Link
-              href={`/#projects`}
+            <ScrollLink
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-500}
+              duration={500}
+              onClick={scrollToProjects}
               style={{ display: "flex", alignItems: "center", gap: "9px" }}
             >
               <span>
                 <HiMiniRectangleStack />
               </span>
               <span>Projects</span>
-            </Link>
-            <Link
+            </ScrollLink>
+            <a
               href="https://drive.google.com/file/d/11fWAtq2K3siewP4Z3BM5fCTS2X2kwekI/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -79,7 +98,7 @@ const Navbar: React.FC = () => {
                 <CiMemoPad />
               </span>
               <span>Resume</span>
-            </Link>
+            </a>
 
             <Box display={`flex`} alignItems={`center`} gap={`9px`}>
               <FaConnectdevelop />
@@ -90,6 +109,7 @@ const Navbar: React.FC = () => {
                 border={`1px`}
                 fontWeight={`bold`}
                 fontSize={`small`}
+                onClick={scrollToProjects}
               >
                 Connect
               </Button>

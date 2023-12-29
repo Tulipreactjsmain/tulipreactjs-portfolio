@@ -30,17 +30,11 @@ const About: React.FC = () => {
             width={`full`}
             position={`relative`}
           >
-            {/* <Image
-              height={`full`}
-              width={`full`}
-              src="/abstract-binary-code-background.webp"
-              opacity={0}
-            /> */}
             <Box
               w={`full`}
               h={`full`}
               backgroundImage={
-                "linear-gradient(to right, rgba(16, 20, 25, 0.1) 2px, transparent 1px)"
+                "linear-gradient(to right, rgba(16, 20, 25, 0.1) 2px, transparent 100px)"
               }
               backgroundSize={"100px 100%"}
               position={`absolute`}
@@ -57,6 +51,7 @@ const About: React.FC = () => {
               alignItems={`center`}
             >
               <Box
+                className="round-circle"
                 width={`10vw`}
                 h={`10vw`}
                 rounded={`100%`}
@@ -92,6 +87,7 @@ const About: React.FC = () => {
               </Box>
 
               <Box
+                className="square-box"
                 width={`10vw`}
                 h={`10vw`}
                 rounded={`10%`}

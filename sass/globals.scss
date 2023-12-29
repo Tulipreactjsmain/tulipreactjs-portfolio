@@ -27,6 +27,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 * ::-webkit-scrollbar {
@@ -41,9 +42,11 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
-  overscroll-behavior: none;
 }
 
+a {
+  cursor: pointer;
+}
 
 .gsap-marker-start {
   z-index: 10000 !important;
@@ -61,7 +64,6 @@ body {
 
 .vStack {
   padding-bottom: 0 !important;
-
 }
 
 .navLinks {
@@ -137,7 +139,7 @@ body {
 }
 
 .btn-43:hover {
-  color: rgb(0, 0, 0) !important;
+  color: rgb(0, 0, 0);
 }
 
 .btn-43:hover:after {
@@ -178,9 +180,6 @@ body {
   animation: flipAnimation 2s infinite ease-in-out;
   animation-delay: 5s !important;
 }
-
-
-
 
 @keyframes shineAnimation {
 }
