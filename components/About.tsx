@@ -34,7 +34,7 @@ const About: React.FC = () => {
               w={`full`}
               h={`full`}
               backgroundImage={
-                "linear-gradient(to right, rgba(16, 20, 25, 0.1) 2px, transparent 100px)"
+                "linear-gradient(to right, rgba(16, 20, 25, 0.1) 2px, transparent 1px)"
               }
               backgroundSize={"100px 100%"}
               position={`absolute`}

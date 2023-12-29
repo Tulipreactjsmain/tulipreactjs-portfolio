@@ -33,7 +33,7 @@ export default function Home() {
       <main ref={elementRef} className={`main`}>
         <Navbar />
         <VStack
-        id="hero"
+          id="hero"
           className="section vStack"
           gap={0}
           alignItems={`flex-start`}
