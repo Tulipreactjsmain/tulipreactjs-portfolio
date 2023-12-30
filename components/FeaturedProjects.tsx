@@ -16,7 +16,7 @@ const FeaturedProjects: React.FC = () => {
       top={0}
       right={0}
       position={`fixed`}
-      zIndex={2000}
+      zIndex={0}
       opacity={0}
       h={`100vh`}
       color={`#7c7c6f`}

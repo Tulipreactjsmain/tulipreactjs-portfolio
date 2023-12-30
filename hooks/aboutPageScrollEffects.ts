@@ -63,7 +63,13 @@ const useAboutPageScroll = (
           yoyo: true,
         });
 
+        const tween3 = gsap.to(".featurProjects", {
+          zIndex: 2000,
+        });
+  
+
         timeline.add(tween2, 0);
+        timeline.add(tween3, 0)
 
         ScrollTrigger.create({
           trigger: ".vStack",
