@@ -12,6 +12,8 @@ import {
   Navbar,
   GradientGithubIcon,
   FeaturedProjects,
+  GithubFooter, 
+  CursorChaser
 } from "@/components";
 import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 import Link from "next/link";
@@ -27,9 +29,6 @@ export default function Home() {
 
   useEffect(() => {
     const lenis = new Lenis();
-    lenis.on("scroll", (e: any) => {
-      console.log(e);
-    });
 
     function raf(time: any) {
       lenis.raf(time);
@@ -104,6 +103,8 @@ export default function Home() {
                 </span>
                 <Link
                   href={`https://github.com/Tulipreactjsmain`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="letterHover"
                 >
                   <GradientGithubIcon displayValue={`block`} />
@@ -179,6 +180,8 @@ export default function Home() {
         </VStack>
         <About />
         <FeaturedProjects />
+        <GithubFooter/>
+        <CursorChaser/>
         <Container
           className=""
           w={`full`}

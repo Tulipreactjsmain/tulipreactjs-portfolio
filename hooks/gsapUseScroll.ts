@@ -8,6 +8,7 @@ const useScroll = (
 ) => {
   useEffect(() => {
     const navBtn = contextRef?.current?.querySelector("button.btn-43");
+    const cursorChaser = contextRef?.current?.querySelector("div.cursorChaser");
     const navLinks = contextRef?.current?.querySelector("div.navLinks");
     const isLargeScreen = window.innerWidth > 1024;
     const isMediumScreen = window.innerWidth <= 1024 && window.innerWidth > 768;
@@ -47,12 +48,20 @@ const useScroll = (
         zIndex: 2000,
       });
 
+      const tween6 = gsap.to(".github-footer", {
+        opacity: 1,
+        duration: 3,
+        ease: `power4.Out`,
+        zIndex: 3000,
+      });
+
       const timeline = gsap.timeline();
       timeline.add(tween1, 0);
       timeline.add(tween2, 0);
       timeline.add(tween3, 0);
       timeline.add(tween4, 0);
       timeline.add(tween5, 0);
+      timeline.add(tween6, 0);
 
       ScrollTrigger.create({
         trigger: ".vStack",
@@ -68,9 +77,11 @@ const useScroll = (
           if (self.progress > 0.5) {
             navBtn?.classList.add("update-nav-btn");
             navLinks?.classList.add("update-nav-links");
+            cursorChaser?.classList.add("update-cursorChaser");
           } else {
             navBtn?.classList.remove("update-nav-btn");
             navLinks?.classList.remove("update-nav-links");
+            cursorChaser?.classList.remove("update-cursorChaser");
           }
         },
         invalidateOnRefresh: true,

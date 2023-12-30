@@ -36,7 +36,7 @@ const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
 
   return (
     <>
-      {/* <Modal
+      <Modal
         closeOnOverlayClick={true}
         isCentered
         onClose={onClose}
@@ -96,7 +96,7 @@ const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
             </Box>
           </ModalBody>
         </MotionModalContent>
-      </Modal> */}
+      </Modal>
     </>
   );
 };

@@ -106,13 +106,7 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
               width={`10vw`}
               h={`10vw`}
               rounded={`10%`}
-              boxShadow={`md`}
-              style={{
-                backgroundImage: `url('${
-                  (children as React.ReactElement)?.props.src
-                }')`,
-                backgroundPosition: `${position.x}% ${position.y}%`,
-              }}
+              boxShadow={`md`}            
             />
           </Box>
         </>

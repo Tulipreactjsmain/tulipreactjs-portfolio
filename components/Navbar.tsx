@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
       spy: true,
       smooth: true,
       offset: -500,
-      duration: 1000,
+      duration: 1,
     });
   };
 
@@ -49,7 +49,6 @@ const Navbar: React.FC = () => {
               overflow={`hidden`}
               w={`40px`}
               h={`40px`}
-              // color="#B7AD8F"
               border={`solid 2px`}
               p={`3px`}
               bg={`black`}

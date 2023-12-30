@@ -94,22 +94,7 @@ const About: React.FC = () => {
                 boxShadow={`md`}
               ></Box>
             </Box>
-            <Box
-              w={`full`}
-              maxW={`7xl`}
-              transform={`translate(-50%, -0%)`}
-              left={`50%`}
-              position={`absolute`}
-              zIndex={200}
-              bottom={0}
-              px={`3vw`}
-            >
-              <Box py={`3vw`} fontSize={`5xl`} color={`green`}>
-                <Link href="https://github.com/Tulipreactjsmain">
-                  <GradientGithubIcon displayValue={`none`} />
-                </Link>
-              </Box>
-            </Box>
+            
           </Box>
         </Magnifier>
       </Box>
