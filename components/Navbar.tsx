@@ -1,34 +1,29 @@
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, useDisclosure } from "@chakra-ui/react";
 import { Inter } from "next/font/google";
 import { HiMiniRectangleStack } from "react-icons/hi2";
 import { CiMemoPad } from "react-icons/ci";
 import { FaConnectdevelop } from "react-icons/fa";
-// import Link from "next/link";
-import {
-  Link,
-  Link as ScrollLink,
-  animateScroll as scroll,
-} from "react-scroll";
-import { useState } from "react";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { HamburgerMenu } from ".";
+import NextLink from "./NextLink";
 
 const inter = Inter({ subsets: ["latin"], weight: "400" });
 const Navbar: React.FC = () => {
-  const [show, setShow] = useState<boolean>(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const scrollToProjects = () => {
     scroll.scrollTo(5260, {
-      smooth: "easeInOutQuad",
+      delay: 0,
+      spy: true,
+      smooth: true,
+      offset: -500,
+      duration: 1000,
     });
   };
-  // const scrollTohome = () => {
-  //   scroll.scrollTo(5260, {
-  //     smooth: "easeInOutQuad",
-  //   });
-  // };
+
   return (
     <>
-      <HamburgerMenu show={show} setShow={setShow} />
+      <HamburgerMenu isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       <Flex
         className="navBar"
         position={`fixed`}
@@ -48,7 +43,7 @@ const Navbar: React.FC = () => {
           w={`full`}
           alignItems={`center`}
         >
-          <Link to="hero" onClick={() => scroll.scrollTo(1)}>
+          <NextLink href="/">
             <Box
               rounded={`100%`}
               overflow={`hidden`}
@@ -65,7 +60,7 @@ const Navbar: React.FC = () => {
                 style={{ width: "100%", height: "100%" }}
               />
             </Box>
-          </Link>
+          </NextLink>
           <Box
             className={`${inter.className} navLinks`}
             display={{ base: `none`, md: `flex`, lg: `flex` }}
@@ -76,10 +71,6 @@ const Navbar: React.FC = () => {
           >
             <ScrollLink
               to="projects"
-              spy={true}
-              smooth={true}
-              offset={-500}
-              duration={500}
               onClick={scrollToProjects}
               style={{ display: "flex", alignItems: "center", gap: "9px" }}
             >
@@ -120,10 +111,10 @@ const Navbar: React.FC = () => {
             display={{ base: `flex`, md: `none`, lg: `none` }}
           >
             <Button
-              onClick={() => setShow(!show)}
+              onClick={onOpen}
               colorScheme="body"
               className={`hamburger hamburger--elastic-r ${
-                show && "is-active"
+                isOpen && "is-active"
               }`}
               type="button"
               padding={0}

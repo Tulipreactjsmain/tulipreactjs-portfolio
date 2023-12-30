@@ -30,10 +30,9 @@ const FeaturedProjsPageEffects = (
       });
       const tween2 = gsap.to(".featurProjects", {
         opacity: 1,
-        duration: 2,
-        ease: `power4.in`,
-        zIndex: 2000,
-        delay: 3.5,
+        duration: 3,
+        ease: `power4.out`,
+        delay: 4.5,
       });
 
       timeline.add(tween2, 0);
@@ -41,8 +40,8 @@ const FeaturedProjsPageEffects = (
       ScrollTrigger.create({
         trigger: ".vStack",
         start: "bottom+=2500vh 30%",
-        end: "bottom+=3200vh 30%",
-        scrub: 0,
+        end: "bottom+=3500vh 30%",
+        scrub: 2,
         // markers: true,
         animation: timeline,
       });

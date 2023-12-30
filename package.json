@@ -16,6 +16,7 @@
     "@fontsource-variable/inter": "^5.0.16",
     "@fontsource/lilita-one": "^5.0.18",
     "@fontsource/open-sans": "^5.0.18",
+    "@studio-freight/lenis": "^1.0.33",
     "framer-motion": "^10.16.16",
     "gsap": "^3.12.3",
     "hamburgers": "^1.2.1",

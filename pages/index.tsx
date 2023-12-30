@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import gsapMethods from "@/utils/gsapMethods";
+import Lenis from "@studio-freight/lenis";
 import {
   useScroll,
   useAboutPageScroll,
@@ -23,7 +24,19 @@ export default function Home() {
   useScroll(contextRef);
   useAboutPageScroll(contextRef);
   useFtProjsScrollEffects(contextRef);
+
   useEffect(() => {
+    const lenis = new Lenis();
+    lenis.on("scroll", (e: any) => {
+      console.log(e);
+    });
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
     elementRefs.push(elementRef);
     gsapMethods({ elementRefs: elementRefs });
   }, []);

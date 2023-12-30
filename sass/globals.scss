@@ -27,7 +27,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 * ::-webkit-scrollbar {
@@ -42,6 +42,32 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
+  // scroll-behavior: smooth;
+}
+
+hr {
+  border: solid #E7DFC6 1px !important;
+  opacity: 0.1;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 a {
@@ -179,6 +205,22 @@ a {
   transform-style: preserve-3d;
   animation: flipAnimation 2s infinite ease-in-out;
   animation-delay: 5s !important;
+}
+
+.loading {
+  background-color: #7c7c6f;
+  width: 4px;
+  height: 4px;
+}
+
+.css-wl0d9u {
+  position: fixed !important;
+  z-index: 50000 !important;
+}
+
+.chakra-modal__content {
+  position: fixed !important;
+  z-index: 50000 !important;
 }
 
 @keyframes shineAnimation {

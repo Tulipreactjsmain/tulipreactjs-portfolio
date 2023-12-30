@@ -62,7 +62,7 @@ const useScroll = (
         end: "100% 30% ",
         pin: true,
         animation: timeline,
-        scrub: 2,
+        scrub: 1,
         // markers: true,
         onUpdate: (self) => {
           if (self.progress > 0.5) {
