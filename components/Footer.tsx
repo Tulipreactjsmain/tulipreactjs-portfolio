@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           <FaInstagram style={{ fontSize: "1.2rem" }} />
         </Link>
         <Link
-          href={`www.linkedin.com/in/solomon-adesanya-tulipreactjs`}
+          href={`https://linkedin.com/in/solomon-adesanya-tulipreactjs`}
           rel="noopener"
           target="_blank"
         >
