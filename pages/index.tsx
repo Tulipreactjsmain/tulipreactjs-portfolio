@@ -186,7 +186,7 @@ export default function Home() {
           className=""
           w={`full`}
           maxW={`7xl`}
-          h={`800.5006vh`}
+          h={`500.5006vh`}
         ></Container>
       </main>
     </>

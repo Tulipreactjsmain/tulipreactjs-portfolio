@@ -28,6 +28,7 @@ const CursorChaser: React.FC = () => {
     <>
       <Box
         className="cursorChaser"
+        display={{ base: "none", md: "none", lg: "block" }}
         style={{
           position: "fixed",
           top: chaserPosition.y + -5,

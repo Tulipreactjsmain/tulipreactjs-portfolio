@@ -1,6 +1,6 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex, Text, Link } from "@chakra-ui/react";
 import { GradientGithubIcon } from ".";
-import Link from "next/link";
+// import Link from "next/link";
 
 const GithubFooter: React.FC = () => {
   return (
@@ -17,15 +17,23 @@ const GithubFooter: React.FC = () => {
         opacity={0}
         px={`3vw`}
       >
-        <Box py={`3vw`} fontSize={`5xl`} color={`green`}>
+        <Flex alignItems={`center`} justifyContent={`space-between`} py={`3vw`}>
           <Link
             href="https://github.com/Tulipreactjsmain"
             target="_blank"
             rel="noopener noreferrer"
+            fontSize={`5xl`}
           >
             <GradientGithubIcon displayValue={`none`} />
           </Link>
-        </Box>
+          <Text
+            fontWeight={`bold`}
+            color={`#7c7c6f`}
+            display={{ base: "block", md: "none", lg: "none" }}
+          >
+            Scroll down
+          </Text>
+        </Flex>
       </Box>
     </>
   );

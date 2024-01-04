@@ -19,7 +19,7 @@ const HeadMetaData: React.FC = function () {
         content="Passionate about designing intuitive user interfaces and building scalable applications for an exceptional user experience."
       />
       <meta property="og:image" content="/Mywebsitefrontpage.png" />
-      <meta property="og:url" content="https://tulipreactjs.vercel.app/" />
+      <meta property="og:url" content="https://solomonadesanya.com/" />
       <meta property="og:site_name" content="Solomon Adesanya" />
       <meta name="twitter:card" content="/Mywebsitefrontpage.png" />
       <meta

@@ -27,9 +27,9 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;      
+      const scrollPosition = window.scrollY;
       const maxScroll = document.body.scrollHeight - window.innerHeight;
-      const normalizedScroll = Math.min(1, scrollPosition / maxScroll); 
+      const normalizedScroll = Math.min(1, scrollPosition / maxScroll);
       const newDegree = scrollDegree + normalizedScroll * (360 - scrollDegree);
 
       setScrollDegree(newDegree);
@@ -65,9 +65,52 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
         bgGradient={linearGradient}
       ></Box>
       {children}
-
-      {showMagnifier ? (
-        <>
+      <Box display={{ base: "none", md: "none", lg: "block" }}>
+        {showMagnifier ? (
+          <>
+            <Box
+              className="showDirection"
+              display={`flex`}
+              alignItems={`center`}
+              justifyContent={`center`}
+              px={`3vw`}
+              w={`full`}
+              left={0}
+              position={`absolute`}
+              zIndex={100}
+              right={0}
+              bottom={0}
+            >
+              <Text
+                fontWeight={`bold`}
+                textAlign={`end`}
+                maxW={`7xl`}
+                p={`3vw`}
+                w={`full`}
+              >
+                Sroll down
+              </Text>
+            </Box>
+            <Box
+              className="magnifier-container"
+              style={{
+                position: "absolute",
+                zIndex: 100,
+                left: `${cursorPosition.x - 100}px`,
+                top: `${cursorPosition.y - 700}px`,
+                pointerEvents: `none`,
+              }}
+            >
+              <Box
+                className="magnifier-item"
+                width={`10vw`}
+                h={`10vw`}
+                rounded={`10%`}
+                boxShadow={`md`}
+              />
+            </Box>
+          </>
+        ) : (
           <Box
             className="showDirection"
             display={`flex`}
@@ -81,62 +124,20 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
             right={0}
             bottom={0}
           >
-            <Text
-              fontWeight={`bold`}
-              textAlign={`end`}
-              maxW={`7xl`}
-              p={`3vw`}
-              w={`full`}
-            >
-              Sroll down
-            </Text>
+            {showMagnifier === false && (
+              <Text
+                fontWeight={`bold`}
+                textAlign={`end`}
+                maxW={`7xl`}
+                p={`3vw`}
+                w={`full`}
+              >
+                Move Cursor
+              </Text>
+            )}
           </Box>
-          <Box
-            className="magnifier-container"
-            style={{
-              position: "absolute",
-              zIndex: 100,
-              left: `${cursorPosition.x - 100}px`,
-              top: `${cursorPosition.y - 700}px`,
-              pointerEvents: `none`,
-            }}
-          >
-            <Box
-              className="magnifier-item"
-              width={`10vw`}
-              h={`10vw`}
-              rounded={`10%`}
-              boxShadow={`md`}            
-            />
-          </Box>
-        </>
-      ) : (
-        <Box
-          className="showDirection"
-          display={`flex`}
-          alignItems={`center`}
-          justifyContent={`center`}
-          px={`3vw`}
-          w={`full`}
-          left={0}
-          position={`absolute`}
-          zIndex={100}
-          right={0}
-          bottom={0}
-        >
-          {showMagnifier === false && (
-            <Text
-              fontWeight={`bold`}
-              textAlign={`end`}
-              maxW={`7xl`}
-              p={`3vw`}
-              w={`full`}
-            >
-              Move Cursor
-            </Text>
-          )}
-        </Box>
-      )}
+        )}
+      </Box>
     </Box>
   );
 };

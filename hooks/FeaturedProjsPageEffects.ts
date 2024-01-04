@@ -41,7 +41,7 @@ const FeaturedProjsPageEffects = (
         trigger: ".vStack",
         start: "bottom+=2500vh 30%",
         end: "bottom+=3500vh 30%",
-        scrub: 2,
+        scrub: 1,
         // markers: true,
         animation: timeline,
       });
