@@ -63,7 +63,6 @@ const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
               flexDirection={`column`}
               justifyContent={`space-between`}
               gap={5}
-              fontWeight={`bold`}
             >
               <ScrollLink
                 to="projects"

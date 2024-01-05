@@ -1,6 +1,6 @@
 import { Box, Flex, Text, Link } from "@chakra-ui/react";
 import { GradientGithubIcon } from ".";
-// import Link from "next/link";
+import { TbSTurnDown } from "react-icons/tb";
 
 const GithubFooter: React.FC = () => {
   return (
@@ -27,12 +27,13 @@ const GithubFooter: React.FC = () => {
             <GradientGithubIcon displayValue={`none`} />
           </Link>
           <Text
-            fontWeight={`bold`}
+            fontSize={`x-large`}
             color={`#7c7c6f`}
-            display={{ base: "block", md: "none", lg: "none" }}
+            display={{ base: "flex", md: "none", lg: "none" }}
           >
-            Scroll down
+           <TbSTurnDown/>
           </Text>
+          
         </Flex>
       </Box>
     </>
