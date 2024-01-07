@@ -29,7 +29,7 @@ const GithubFooter: React.FC = () => {
           <Text
             fontSize={`x-large`}
             color={`#7c7c6f`}
-            display={{ base: "flex", md: "none", lg: "none" }}
+            display={{ base: "flex", md: "flex", lg: "none" }}
           >
            <TbSTurnDown/>
           </Text>

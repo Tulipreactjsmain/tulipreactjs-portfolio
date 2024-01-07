@@ -12,8 +12,8 @@ import {
   Navbar,
   GradientGithubIcon,
   FeaturedProjects,
-  GithubFooter, 
-  CursorChaser
+  GithubFooter,
+  CursorChaser,
 } from "@/components";
 import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 import Link from "next/link";
@@ -78,7 +78,7 @@ export default function Home() {
               as={`h1`}
               width={"100%"}
               fontWeight={"bold"}
-              fontSize={{ base: "3.5rem", md: `16vw`, lg: `11rem` }}
+              fontSize={{ base: "15vw", md: `16vw`, lg: `11rem` }}
               opacity={0}
               lineHeight={1}
               letterSpacing={`-0.035em`}
@@ -137,7 +137,7 @@ export default function Home() {
               fontFamily={`PolySans Median`}
               opacity={0}
               color={`#B7AD8F`}
-              fontSize={`5xl`}
+              fontSize={{ base: "11.2vw", md: `5xl`, lg: `5xl` }}
             >
               UI engineer & server-side developer
             </Text>
@@ -180,13 +180,13 @@ export default function Home() {
         </VStack>
         <About />
         <FeaturedProjects />
-        <GithubFooter/>
-        <CursorChaser/>
+        <GithubFooter />
+        <CursorChaser />
         <Container
           className=""
           w={`full`}
           maxW={`7xl`}
-          h={`500.5006vh`}
+          h={{ base: `700.5006vh`, md: `500.5006vh`, lg: `500.5006vh` }}
         ></Container>
       </main>
     </>
