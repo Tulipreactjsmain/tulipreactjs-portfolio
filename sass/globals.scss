@@ -42,7 +42,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
-  // scroll-behavior: smooth;
 }
 
 hr {
@@ -63,7 +62,7 @@ html.lenis {
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
@@ -254,8 +253,51 @@ a {
   animation-play-state: running;
 }
 
+.imgBox {
+  box-shadow: 0px -198px 93px -43px rgba(0,0,0,0.91) inset;
+-webkit-box-shadow: 0px -198px 93px -43px rgba(0,0,0,0.91) inset;
+-moz-box-shadow: 0px -198px 93px -43px rgba(0,0,0,0.91) inset;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #F39B6D, #548687);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.circle {
+  border: solid;
+  border-radius: 100%;
+  padding: 3px;
+  cursor: pointer;
+}
 @media (max-width: 767px) {
   .surname {
     justify-content: flex-start !important;
   }
+}
+
+
+
+
+
+
+.scroll-container {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 350px;
+  height: 200px;
+  overflow-y: scroll !important;
+  scroll-behavior: smooth !important;
+  border: solid;
+}
+
+.scroll-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 5em;
 }

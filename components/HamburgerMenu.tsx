@@ -57,12 +57,13 @@ const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
         >
           <ModalBody>
             <Box
-              pt={`2rem`}
+              py={`1rem`}
               className={`${inter.className} navLinks`}
               display={`flex`}
               flexDirection={`column`}
               justifyContent={`space-between`}
-              gap={5}
+              gap={2}
+              height={`full`}
             >
               <ScrollLink
                 to="projects"

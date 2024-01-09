@@ -14,7 +14,7 @@ const theme: CustomThemeConfig = extendTheme({
     global: {
       "Html, body": {
         fontSize: "16px",
-        background: "#101419",
+        background: "#0e100f",
         color:"#E7DFC6"
       },
     },
