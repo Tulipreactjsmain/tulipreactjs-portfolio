@@ -97,7 +97,7 @@ const FeaturedProjects: React.FC = () => {
             flexDirection={`column`}
             fontWeight={`bold`}
             gap={4}
-            maxW={`350`}
+            maxW={{base:`full`, md:`350`, lg:`350`}}
           >
             <Text fontSize={`small`} className="gradient-text">
               {projectData[currentProject]?.about}
@@ -108,6 +108,7 @@ const FeaturedProjects: React.FC = () => {
               alignItems={`center`}
               gap={2}
               fontSize={`2xl`}
+              w={`full`}
             >
               <Flex gap={5}>
                 <Link
@@ -142,7 +143,7 @@ const FeaturedProjects: React.FC = () => {
           </Flex>
           <Box
             position={`relative`}
-            w={{ base: `full`, md: `100vw`, lg: `45vw` }}
+            maxW={{ base: `full`, md: `100vw`, lg: `45vw` }}
             h={{ base: `30vh`, md: `300`, lg: `450` }}
             overflow={`hidden`}
             rounded={20}

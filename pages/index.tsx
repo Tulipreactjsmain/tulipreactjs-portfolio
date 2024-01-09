@@ -76,8 +76,8 @@ export default function Home() {
               className="name polySans"
               as={`h1`}
               width={"100%"}
-              fontWeight={"bold"}
-              fontSize={{ base: "15vw", md: `16vw`, lg: `11rem` }}
+              // fontWeight={"bold"}
+              fontSize={{ base: "13vw", md: `16vw`, lg: `11rem` }}
               opacity={0}
               lineHeight={1}
               letterSpacing={`-0.035em`}
