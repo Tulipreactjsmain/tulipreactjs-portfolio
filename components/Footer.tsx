@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 
 const Footer: React.FC = () => {
   return (
-    <Box display={`flex`} flexDirection={`column`} gap={2} position={`absolute`} py={`12vh`} bottom={0} zIndex={5000}>
+    <Box display={{base:`none`, md:`none`, lg:`none`}} flexDirection={`column`} gap={2} position={`absolute`} py={`12vh`} bottom={0} zIndex={5000}>
       <Flex
         color={`#7c7c6f`}
         alignItems={`center`}
