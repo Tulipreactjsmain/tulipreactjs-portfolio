@@ -17,7 +17,7 @@ const GithubFooter: React.FC = () => {
         opacity={0}
         px={`3vw`}
       >
-        <Flex alignItems={`center`} justifyContent={`space-between`} py={`3vw`}>
+        <Flex alignItems={`center`} justifyContent={`space-between`} pb={`3vw`}>
           <Link
             href="https://github.com/Tulipreactjsmain"
             target="_blank"
