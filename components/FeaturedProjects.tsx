@@ -9,7 +9,6 @@ export interface ProjectData {
   about: string;
   mobileImage: string;
   desktopImage: string;
-  github: string;
   websiteLink: string;
   githubLink: string;
 }
@@ -23,16 +22,22 @@ const FeaturedProjects: React.FC = () => {
         "A complete full feature E-commerce web app built with react, nodeJs, express bootstrap and MongoDB.",
       mobileImage: "/BuyPayMobileView.webp",
       desktopImage: "/BuyPayDesktopView.webp",
-      github: "",
       websiteLink: "https://buynpay.vercel.app/",
       githubLink: "https://github.com/Tulipreactjsmain/E-commerce",
+    },
+    {
+      about:
+        "@2022 Collaborative NFT minting project built with (python, solidity, javascript, react, SCSS & Chakra UI). Founded by me.",
+      mobileImage: "/RDHMobileView.png",
+      desktopImage: "/RDHLaptopview.png",
+      websiteLink: "https://rdh.club",
+      githubLink: "https://github.com/Tulipreactjsmain/RDH_Academy",
     },
     {
       about:
         "Task manager app built with react, nodeJs, express bootstrap and MongoDB.",
       mobileImage: "/TaskDutyMobileView.webp",
       desktopImage: "/TaskdutyLAptopView.webp",
-      github: "",
       websiteLink: "https://taskduty.vercel.app",
       githubLink: "https://github.com/Tulipreactjsmain/Task-Duty-App",
     },
