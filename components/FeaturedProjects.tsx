@@ -28,8 +28,8 @@ const FeaturedProjects: React.FC = () => {
     {
       about:
         "@2022 Collaborative NFT minting project built with (python, solidity, javascript, react, SCSS & Chakra UI). Founded by me.",
-      mobileImage: "/RDHMobileView.png",
-      desktopImage: "/RDHLaptopview.png",
+      mobileImage: "/RDHMobileView.webp",
+      desktopImage: "/RDHLaptopview.webp",
       websiteLink: "https://rdh.club",
       githubLink: "https://github.com/Tulipreactjsmain/RDH_Academy",
     },
