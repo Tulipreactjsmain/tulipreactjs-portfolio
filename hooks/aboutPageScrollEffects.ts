@@ -38,7 +38,7 @@ const useAboutPageScroll = (
             trigger: ".vStack",
             start: "bottom+=900vh 30%",
             end: "bottom+=1700vh 30%",
-            markers: true,
+            // markers: true,
             scrub: 0,
           },
         });
@@ -88,9 +88,3 @@ const useAboutPageScroll = (
 
 export default useAboutPageScroll;
 
-// const tween3 = gsap.to(".round-circle", {
-//   duration: 2.5,
-//   rotation: 360, // Rotate 360 degrees
-//   ease: "none", // Linear rotation
-//   transformOrigin: "center center", // Rotate around the center
-// });
