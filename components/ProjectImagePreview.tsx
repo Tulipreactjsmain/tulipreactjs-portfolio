@@ -41,7 +41,6 @@ const ProjectImagePreview: React.FC<ProjectDetailProps> = ({
                 w={`full`}
                 h={`full`}
                 alt="Project preview"
-                fetchPriority="high"
               />
               <Image
                 src={projectData[currentProject].mobileImage}
@@ -53,7 +52,6 @@ const ProjectImagePreview: React.FC<ProjectDetailProps> = ({
                 bottom={0}
                 left={15}
                 loading="lazy"
-                fetchPriority="high"
               />
             </Box>
           </Link>

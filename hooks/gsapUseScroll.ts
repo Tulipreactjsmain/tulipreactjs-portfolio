@@ -65,9 +65,7 @@ const useScroll = (
 
       ScrollTrigger.create({
         trigger: ".vStack",
-        start: `${
-          isLargeScreen ? "24.7%" : isMediumScreen ? "28%" : "29%"
-        } 30%,`,
+        start:"bottom bottom",
         end: "100% 30% ",
         pin: true,
         animation: timeline,

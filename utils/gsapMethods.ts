@@ -10,7 +10,9 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
   elementRefs.forEach((ref) => {
     const hi: Element | null | undefined = ref.current?.querySelector("p.hi");
     const name: Element | null | undefined =
-      ref.current?.querySelector("h1.name");
+      ref.current?.querySelector("div.name");
+      const name2: Element | null | undefined =
+      ref.current?.querySelector("div.name2");
     const slog: Element | null | undefined =
       ref.current?.querySelector("div.slog");
       
@@ -50,6 +52,20 @@ const gsapMethods = ({ elementRefs }: MethodProps): void => {
       delay: 2.5,
     });
     gsap.to(name as Element, {
+      duration: 2.5,
+      delay: 2.5,
+      opacity: 1,
+      ease: "elastic.out(1,0.2)",
+      y: 0,
+    });
+    gsap.from(name2 as Element, {
+      duration: 2.5,
+      opacity: 0,
+      ease: "elastic.out(2,0.75)",
+      y: 150,
+      delay: 2.5,
+    });
+    gsap.to(name2 as Element, {
       duration: 2.5,
       delay: 2.5,
       opacity: 1,

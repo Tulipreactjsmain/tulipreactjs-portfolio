@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsapMethods from "@/utils/gsapMethods";
 import Lenis from "@studio-freight/lenis";
 import {
@@ -11,6 +11,7 @@ import {
   About,
   Navbar,
   GradientGithubIcon,
+  GradientGithubIcon2,
   FeaturedProjects,
   GithubFooter,
   CursorChaser,
@@ -22,10 +23,25 @@ export default function Home() {
   const elementRef = useRef<HTMLDivElement | null>(null);
   const elementRefs: React.RefObject<HTMLDivElement>[] = [];
   const contextRef = elementRef;
+  const [scrollY, setScrollY] = useState<number>(0);
+
 
   useScroll(contextRef);
   useAboutPageScroll(contextRef);
   useFtProjsScrollEffects(contextRef);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log(scrollY);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -39,6 +55,7 @@ export default function Home() {
     gsapMethods({ elementRefs: elementRefs });
   }, []);
 
+  
   return (
     <>
       <main ref={elementRef} className={`main`}>
@@ -49,7 +66,7 @@ export default function Home() {
           gap={0}
           alignItems={`flex-start`}
           pt={{ base: `9rem`, md: `15rem`, lg: `9rem` }}
-          h={`100vh`}
+          h={`125vh`}
           position={`static`}
           zIndex={1000}
         >
@@ -72,16 +89,78 @@ export default function Home() {
                 className="hi"
               ></Text>
             </Box>
-            <Heading
-              className="name polySans"
-              as={`h1`}
+            <Box className="name" opacity={0}>
+              <Heading
+                className="polySans"
+                display={{ base: "none", md: "block", lg: "block" }}
+                as={`h1`}
+                width={"100%"}
+                // fontWeight={"bold"}
+                fontSize={{ base: "13vw", md: `16vw`, lg: `11rem` }}
+                lineHeight={1}
+                letterSpacing={`-0.035em`}
+                mb={`1rem`}
+              >
+                <span
+                  className="firstName"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <span className="letterHover">
+                    <span>S</span>
+                    <span>o</span>
+                    <span>l</span>
+                    <span style={{ color: "#7c7c6f" }}>o</span>
+                    <span>m</span>
+                    <span>o</span>
+                    <span>n</span>
+                  </span>
+                  <Link
+                    href={`https://github.com/Tulipreactjsmain`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="letterHover"
+                    
+                  >
+                    <GradientGithubIcon displayValue={`block`} />
+                  </Link>
+                </span>
+                <span
+                  className="surname letterHover flip-container"
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <span>A</span>
+                  <span>d</span>
+                  <span>e</span>
+                  <span>s</span>
+                  <span className={`flip-text active"}`}>a</span>
+                  <span>n</span>
+                  <span>y</span>
+                  <span>a</span>
+                  <div className="flip-text-back"></div>
+                </span>
+              </Heading>
+            </Box>
+
+            {/* Name in mobile version */}
+            <Box
+              className="name2"
+              display={{ base: "block", md: "none", lg: "none" }}
               width={"100%"}
-              // fontWeight={"bold"}
-              fontSize={{ base: "13vw", md: `16vw`, lg: `11rem` }}
+              fontSize={"13.2vw"}
               opacity={0}
-              lineHeight={1}
+              fontFamily={`PolySans Median`}
+              lineHeight={1.1}
               letterSpacing={`-0.035em`}
               mb={`1rem`}
+              pt={2}
             >
               <span
                 className="firstName"
@@ -106,7 +185,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="letterHover"
                 >
-                  <GradientGithubIcon displayValue={`block`} />
+                  <GradientGithubIcon2 displayValue={`block`} />
                 </Link>
               </span>
               <span
@@ -127,7 +206,8 @@ export default function Home() {
                 <span>a</span>
                 <div className="flip-text-back"></div>
               </span>
-            </Heading>
+              <span>Rukevwe</span>
+            </Box>
           </Box>
           <Box w={`full`} className="title">
             <Text
