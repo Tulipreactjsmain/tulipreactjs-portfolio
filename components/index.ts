@@ -8,7 +8,8 @@ import GradientGithubIcon from "./GradientGithubIcon";
 import FeaturedProjects from "./FeaturedProjects";
 import GithubFooter from "./GithubFooter";
 import CursorChaser from "./CursorChaser";
-import GradientGithubIcon2 from "./GradientGithubIcon2";
+import HeroNameInDesktop from "./HeroNameInDesktop";
+import HeroNameInMobile from "./HeroNameInMobile";
 
 export {
   HeadMetaData,
@@ -18,8 +19,9 @@ export {
   About,
   Magnifier,
   GradientGithubIcon,
-  GradientGithubIcon2,
   FeaturedProjects,
   GithubFooter,
   CursorChaser,
+  HeroNameInDesktop,
+  HeroNameInMobile,
 };

@@ -38,7 +38,7 @@ const useAboutPageScroll = (
             trigger: ".vStack",
             start: "bottom+=900vh 30%",
             end: "bottom+=1700vh 30%",
-            // markers: true,
+            markers: true,
             scrub: 0,
           },
         });

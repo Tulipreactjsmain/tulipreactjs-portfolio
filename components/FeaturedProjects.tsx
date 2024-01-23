@@ -54,6 +54,7 @@ const FeaturedProjects: React.FC = () => {
       <Box>
         <Heading
           fontSize={{ base: `3xl`, md: `5xl`, lg: `5xl` }}
+          fontFamily={`PolySans Median`}
           w={`50rem`}
           maxW={`50vw`}
         >

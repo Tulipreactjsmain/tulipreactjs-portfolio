@@ -10,8 +10,8 @@ import { TbSTurnDown } from "react-icons/tb";
 import {
   About,
   Navbar,
-  GradientGithubIcon,
-  GradientGithubIcon2,
+  HeroNameInDesktop,
+  HeroNameInMobile,
   FeaturedProjects,
   GithubFooter,
   CursorChaser,
@@ -25,7 +25,6 @@ export default function Home() {
   const contextRef = elementRef;
   const [scrollY, setScrollY] = useState<number>(0);
 
-
   useScroll(contextRef);
   useAboutPageScroll(contextRef);
   useFtProjsScrollEffects(contextRef);
@@ -34,9 +33,9 @@ export default function Home() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -55,7 +54,6 @@ export default function Home() {
     gsapMethods({ elementRefs: elementRefs });
   }, []);
 
-  
   return (
     <>
       <main ref={elementRef} className={`main`}>
@@ -89,125 +87,10 @@ export default function Home() {
                 className="hi"
               ></Text>
             </Box>
-            <Box className="name" opacity={0}>
-              <Heading
-                className="polySans"
-                display={{ base: "none", md: "block", lg: "block" }}
-                as={`h1`}
-                width={"100%"}
-                // fontWeight={"bold"}
-                fontSize={{ base: "13vw", md: `16vw`, lg: `11rem` }}
-                lineHeight={1}
-                letterSpacing={`-0.035em`}
-                mb={`1rem`}
-              >
-                <span
-                  className="firstName"
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <span className="letterHover">
-                    <span>S</span>
-                    <span>o</span>
-                    <span>l</span>
-                    <span style={{ color: "#7c7c6f" }}>o</span>
-                    <span>m</span>
-                    <span>o</span>
-                    <span>n</span>
-                  </span>
-                  <Link
-                    href={`https://github.com/Tulipreactjsmain`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="letterHover"
-                    
-                  >
-                    <GradientGithubIcon displayValue={`block`} />
-                  </Link>
-                </span>
-                <span
-                  className="surname letterHover flip-container"
-                  style={{
-                    display: "flex",
-                    width: "100%",
-                    justifyContent: "flex-end",
-                  }}
-                >
-                  <span>A</span>
-                  <span>d</span>
-                  <span>e</span>
-                  <span>s</span>
-                  <span className={`flip-text active"}`}>a</span>
-                  <span>n</span>
-                  <span>y</span>
-                  <span>a</span>
-                  <div className="flip-text-back"></div>
-                </span>
-              </Heading>
-            </Box>
-
+            {/* Name in Desktop version */}
+            <HeroNameInDesktop />
             {/* Name in mobile version */}
-            <Box
-              className="name2"
-              display={{ base: "block", md: "none", lg: "none" }}
-              width={"100%"}
-              fontSize={"13.2vw"}
-              opacity={0}
-              fontFamily={`PolySans Median`}
-              lineHeight={1.1}
-              letterSpacing={`-0.035em`}
-              mb={`1rem`}
-              pt={2}
-            >
-              <span
-                className="firstName"
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <span className="letterHover">
-                  <span>S</span>
-                  <span>o</span>
-                  <span>l</span>
-                  <span style={{ color: "#7c7c6f" }}>o</span>
-                  <span>m</span>
-                  <span>o</span>
-                  <span>n</span>
-                </span>
-                <Link
-                  href={`https://github.com/Tulipreactjsmain`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="letterHover"
-                >
-                  <GradientGithubIcon2 displayValue={`block`} />
-                </Link>
-              </span>
-              <span
-                className="surname letterHover flip-container"
-                style={{
-                  display: "flex",
-                  width: "100%",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <span>A</span>
-                <span>d</span>
-                <span>e</span>
-                <span>s</span>
-                <span className={`flip-text active"}`}>a</span>
-                <span>n</span>
-                <span>y</span>
-                <span>a</span>
-                <div className="flip-text-back"></div>
-              </span>
-              <span>Rukevwe</span>
-            </Box>
+            <HeroNameInMobile />
           </Box>
           <Box w={`full`} className="title">
             <Text
