@@ -6,13 +6,15 @@ import { GradientGithubIcon } from ".";
 const HeroNameInDesktop: React.FC = () => {
   return (
     <Box className="name" opacity={0}>
-              <Heading
+              <Box
                 className="polySans"
                 display={{ base: "none", md: "block", lg: "block" }}
-                as={`h1`}
+                // as={`h1`}
                 width={"100%"}
-                // fontWeight={"bold"}
-                fontSize={{ base: "13vw", md: `16vw`, lg: `11rem` }}
+                fontFamily={`PolySans Median`}
+                // fontWeight={"600"}
+                // fontSize={{ base: "13vw", md: `16vw`, lg: `15rem` }}
+                fontSize={`max(5.125rem,min(13.3333vw + 0.5rem,18rem))`}
                 lineHeight={1}
                 letterSpacing={`-0.035em`}
                 mb={`1rem`}
@@ -62,7 +64,7 @@ const HeroNameInDesktop: React.FC = () => {
                   <span>a</span>
                   <div className="flip-text-back"></div>
                 </span>
-              </Heading>
+              </Box>
             </Box>
   )
 };

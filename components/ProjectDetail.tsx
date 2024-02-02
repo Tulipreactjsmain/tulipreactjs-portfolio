@@ -24,7 +24,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
       gap={4}
       maxW={{ base: `full`, md: `350`, lg: `350` }}
     >
-      <Text fontSize={`small`} className="gradient-text">
+      <Text fontSize={`small`} className="gradient-text" >
         {projectData[currentProject]?.about}
       </Text>
       <Box

@@ -30,9 +30,9 @@
   // scroll-behavior: smooth;
 }
 
-* ::-webkit-scrollbar {
-  display: none;
-}
+// * ::-webkit-scrollbar {
+//   display: none;
+// }
 
 html,
 body {
@@ -95,6 +95,10 @@ a {
   a:hover {
     color: rgb(255, 255, 240);
   }
+}
+
+.update-navRule {
+  border-bottom: 0 !important;
 }
 
 

@@ -24,7 +24,7 @@ const FtProjectsLayout: React.FC<LayoutProps> = ({ children }) => {
       color={`#7c7c6f`}
     >
       <Box
-        maxW={`7xl`}
+        maxW={`95rem`}
         px={`3vw`}
         w={`full`}
         h={`full`}

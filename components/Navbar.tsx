@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const scrollToProjects = () => {
-    scroll.scrollTo(5260, {
+    scroll.scrollTo(9650, {
       delay: 0,
       spy: true,
       smooth: true,
@@ -31,15 +31,18 @@ const Navbar: React.FC = () => {
         w={`full`}
         right={0}
         left={0}
-        alignItems={`center`}
-        justifyContent={`center`}
+        top={0}
+        flexDirection={`column`}
         color={`#7c7c6f`}
+        px={`3vw`}
       >
+        <Box></Box>
         <Box
+          className="navRule"
           display={`flex`}
           justifyContent={`space-between`}
-          maxW={`7xl`}
-          px={`3vw`}
+          flex={`1`}
+          py={`1.5rem`}
           w={`full`}
           alignItems={`center`}
         >
@@ -125,6 +128,7 @@ const Navbar: React.FC = () => {
             </Button>
           </Box>
         </Box>
+        <hr style={{borderBottom: "solid #42433d"}}/>
       </Flex>
     </>
   );

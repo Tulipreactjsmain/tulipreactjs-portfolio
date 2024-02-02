@@ -84,11 +84,11 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
               <Text
                 fontWeight={`bold`}
                 textAlign={`end`}
-                maxW={`7xl`}
+                maxW={`95rem`}
                 p={`3vw`}
                 w={`full`}
               >
-                Sroll down
+                Scroll down
               </Text>
             </Box>
             <Box
@@ -128,7 +128,7 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
               <Text
                 fontWeight={`bold`}
                 textAlign={`end`}
-                maxW={`7xl`}
+                maxW={`95rem`}
                 p={`3vw`}
                 w={`full`}
               >

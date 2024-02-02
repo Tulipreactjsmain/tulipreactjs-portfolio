@@ -58,32 +58,34 @@ const About: React.FC = () => {
                 boxShadow={`md`}
               ></Box>
               <Box className="textContents" position={`relative`}>
-                <Text
+                <Box
                   w={`50rem`}
                   maxW={`70vw`}
                   className="aboutIntroText"
-                  fontFamily={`PolySans Median`}
+                  fontFamily={`'PolySans Median'`}
                   id="aboutIntroText"
                   pt={10}
                   pb={20}
                   position={`absolute`}
                   zIndex={1}
                 >
-                  I am a maestro of <br /> exactitude.
-                </Text>
-                <Text
+                  <span>
+                    I am a maestro of <br /> exactitude.
+                  </span>
+                </Box>
+                <Box
                   w={`50rem`}
                   maxW={`70vw`}
                   opacity={0}
                   position={`static`}
                   className="aboutSecondText"
-                  fontFamily={`PolySans Median`}
+                  fontFamily={`'PolySans Median'`}
                   pt={10}
                   pb={20}
                   zIndex={0}
                 >
-                  with a passion for Impeccable design.
-                </Text>
+                  <span> with a passion for Impeccable design.</span>
+                </Box>
               </Box>
 
               <Box
@@ -94,7 +96,6 @@ const About: React.FC = () => {
                 boxShadow={`md`}
               ></Box>
             </Box>
-            
           </Box>
         </Magnifier>
       </Box>

@@ -9,6 +9,7 @@ const useAboutPageScroll = (
 ) => {
   useEffect(() => {
     const text = contextRef?.current?.querySelector(".aboutIntroText");
+    
 
     if (text) {
       let ctx = gsap.context(() => {
@@ -27,20 +28,6 @@ const useAboutPageScroll = (
           });
 
           timeline.add(tween1, 0);
-        });
-
-        const tween2 = gsap.to(".aboutSecondText", {
-          duration: 0.001,
-          // ease: "power4.inOut",
-          delay: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: ".vStack",
-            start: "bottom+=900vh 30%",
-            end: "bottom+=1700vh 30%",
-            // markers: true,
-            scrub: 0,
-          },
         });
 
         gsap.to(".round-circle", {
@@ -63,18 +50,17 @@ const useAboutPageScroll = (
           yoyo: true,
         });
 
-        const tween3 = gsap.to(".featurProjects", {
+        const tween2 = gsap.to(".featurProjects", {
           zIndex: 2000,
         });
-  
-
         timeline.add(tween2, 0);
-        timeline.add(tween3, 0)
 
         ScrollTrigger.create({
-          trigger: ".vStack",
-          start: "bottom+=100vh 30%",
+          trigger: ".aboutPage-opener",
+          // trigger: ".vStack",
+          start: "top bottom",
           end: "bottom+=900vh 30%",
+          pin:true,
           scrub: 0,
           // markers: true,
           animation: timeline,
@@ -87,4 +73,3 @@ const useAboutPageScroll = (
 };
 
 export default useAboutPageScroll;
-

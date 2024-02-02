@@ -10,8 +10,7 @@ const useScroll = (
     const navBtn = contextRef?.current?.querySelector("button.btn-43");
     const cursorChaser = contextRef?.current?.querySelector("div.cursorChaser");
     const navLinks = contextRef?.current?.querySelector("div.navLinks");
-    const isLargeScreen = window.innerWidth > 1024;
-    const isMediumScreen = window.innerWidth <= 1024 && window.innerWidth > 768;
+    const navRule = contextRef?.current?.querySelector("div.navRule");
 
     let ctx = gsap.context(() => {
       const tween1 = gsap.to(".firstName", {
@@ -65,7 +64,7 @@ const useScroll = (
 
       ScrollTrigger.create({
         trigger: ".vStack",
-        start:"bottom bottom",
+        start: "bottom bottom",
         end: "100% 30% ",
         pin: true,
         animation: timeline,
@@ -76,10 +75,12 @@ const useScroll = (
             navBtn?.classList.add("update-nav-btn");
             navLinks?.classList.add("update-nav-links");
             cursorChaser?.classList.add("update-cursorChaser");
+            navRule?.classList.add("update-navRule");
           } else {
             navBtn?.classList.remove("update-nav-btn");
             navLinks?.classList.remove("update-nav-links");
             cursorChaser?.classList.remove("update-cursorChaser");
+            navRule?.classList.remove("update-navRule");
           }
         },
         invalidateOnRefresh: true,

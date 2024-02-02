@@ -38,10 +38,11 @@ const FeaturedProjsPageEffects = (
       timeline.add(tween2, 0);
 
       ScrollTrigger.create({
-        trigger: ".vStack",
-        start: "bottom+=2500vh 30%",
+        trigger: ".ftProjs-opener",
+        start: "top bottom",
         end: "bottom+=3500vh 30%",
         scrub: 1,
+        pin: true,
         // markers: true,
         animation: timeline,
       });

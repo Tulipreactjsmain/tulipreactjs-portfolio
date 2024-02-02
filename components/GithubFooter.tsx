@@ -8,7 +8,7 @@ const GithubFooter: React.FC = () => {
       <Box
         className="github-footer"
         w={`full`}
-        maxW={`7xl`}
+        maxW={`95rem`}
         transform={`translate(-50%, -0%)`}
         left={`50%`}
         position={`fixed`}

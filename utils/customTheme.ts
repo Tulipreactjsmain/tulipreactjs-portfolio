@@ -21,7 +21,7 @@ const theme: CustomThemeConfig = extendTheme({
   },
   fonts: {
     heading: `'PolySans Median', 'Lilita One', sans-serif`,
-    body: `'Inter', sans-serif`,
+    body: `'PolySans Median', 'Inter', sans-serif`,
   },
   fontSizes: {
     xs: "12px",

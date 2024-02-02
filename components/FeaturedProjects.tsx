@@ -61,7 +61,7 @@ const FeaturedProjects: React.FC = () => {
           Featured Projects
         </Heading>
 
-        <Text pt={3}>WEB DEVELOPER FOLIO / 2021 — 2023</Text>
+        <Text pt={3} fontFamily={`'Inter', sans-serif`}>WEB DEVELOPER FOLIO / 2021 — 2023</Text>
       </Box>
       <Box
         display={`flex`}

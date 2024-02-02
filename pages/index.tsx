@@ -5,6 +5,7 @@ import {
   useScroll,
   useAboutPageScroll,
   useFtProjsScrollEffects,
+  useAboutSecondTextScroll,
 } from "@/hooks";
 import { TbSTurnDown } from "react-icons/tb";
 import {
@@ -16,8 +17,7 @@ import {
   GithubFooter,
   CursorChaser,
 } from "@/components";
-import { Heading, VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
-import Link from "next/link";
+import { VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 
 export default function Home() {
   const elementRef = useRef<HTMLDivElement | null>(null);
@@ -27,6 +27,7 @@ export default function Home() {
 
   useScroll(contextRef);
   useAboutPageScroll(contextRef);
+  useAboutSecondTextScroll(contextRef);
   useFtProjsScrollEffects(contextRef);
 
   useEffect(() => {
@@ -40,7 +41,6 @@ export default function Home() {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(scrollY);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -67,6 +67,7 @@ export default function Home() {
           h={`125vh`}
           position={`static`}
           zIndex={1000}
+          w={`full`}
         >
           <Box w={`full`}>
             <Box
@@ -92,7 +93,11 @@ export default function Home() {
             {/* Name in mobile version */}
             <HeroNameInMobile />
           </Box>
-          <Box w={`full`} className="title">
+          <Box
+            w={`full`}
+            className="title"
+            pt={{ base: "0", md: `2rem`, lg: `2rem` }}
+          >
             <Text
               className="occupation polySans"
               lineHeight={1.1}
@@ -145,11 +150,10 @@ export default function Home() {
         <GithubFooter />
         <CursorChaser />
         <Container
-          className=""
-          w={`full`}
-          maxW={`7xl`}
-          h={{ base: `700.5006vh`, md: `500.5006vh`, lg: `500.5006vh` }}
+          className="aboutPage-opener"
         ></Container>
+        <Container className="aboutSecondText-opener"></Container>
+        <Container className="ftProjs-opener"></Container>
       </main>
     </>
   );
