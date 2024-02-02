@@ -1,6 +1,5 @@
-import { Box, Text, Container, Link } from "@chakra-ui/react";
+import { Box, Text,} from "@chakra-ui/react";
 import { Magnifier } from ".";
-import { GradientGithubIcon } from ".";
 const About: React.FC = () => {
   return (
     <Box position={`relative`} color={`#B7AD8F`}>
@@ -58,34 +57,32 @@ const About: React.FC = () => {
                 boxShadow={`md`}
               ></Box>
               <Box className="textContents" position={`relative`}>
-                <Box
+                <Text
                   w={`50rem`}
                   maxW={`70vw`}
                   className="aboutIntroText"
-                  fontFamily={`'PolySans Median'`}
+                  fontFamily={`PolySans Median`}
                   id="aboutIntroText"
                   pt={10}
                   pb={20}
                   position={`absolute`}
                   zIndex={1}
                 >
-                  <span>
-                    I am a maestro of <br /> exactitude.
-                  </span>
-                </Box>
-                <Box
+                  I am a maestro of <br /> exactitude.
+                </Text>
+                <Text
                   w={`50rem`}
                   maxW={`70vw`}
                   opacity={0}
                   position={`static`}
                   className="aboutSecondText"
-                  fontFamily={`'PolySans Median'`}
+                  fontFamily={`PolySans Median`}
                   pt={10}
                   pb={20}
                   zIndex={0}
                 >
-                  <span> with a passion for Impeccable design.</span>
-                </Box>
+                  with a passion for Impeccable design.
+                </Text>
               </Box>
 
               <Box

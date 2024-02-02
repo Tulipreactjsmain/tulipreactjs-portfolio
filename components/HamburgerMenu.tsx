@@ -25,7 +25,7 @@ const inter = Inter({ subsets: ["latin"], weight: "400" });
 const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
   const { isOpen, onOpen, onClose } = props;
   const scrollToProjects = () => {
-    scroll.scrollTo(5260, {
+    scroll.scrollTo(9650, {
       delay: 0,
       spy: true,
       smooth: true,

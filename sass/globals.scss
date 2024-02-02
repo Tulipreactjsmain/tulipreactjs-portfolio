@@ -199,8 +199,9 @@ a {
 
 .slog {
   &:hover {
-    background-color: rgb(255, 255, 240);
-    color: #13181f;
+    background-color: #7c7c6f;
+    transform: perspective(500px) rotateX(0deg);
+    color: #1e252f;
     transition: all 0.2s ease-in-out;
   }
 }

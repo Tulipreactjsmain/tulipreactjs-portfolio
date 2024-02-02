@@ -35,7 +35,11 @@ const FeaturedProjsPageEffects = (
         delay: 4.5,
       });
 
+      // const tween3 = gsap.to(".connect", {
+      //   zIndex: 2000,
+      // });
       timeline.add(tween2, 0);
+      // timeline.add(tween3, 0);
 
       ScrollTrigger.create({
         trigger: ".ftProjs-opener",

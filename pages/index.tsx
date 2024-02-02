@@ -6,6 +6,7 @@ import {
   useAboutPageScroll,
   useFtProjsScrollEffects,
   useAboutSecondTextScroll,
+  useconnectWMeScroll,
 } from "@/hooks";
 import { TbSTurnDown } from "react-icons/tb";
 import {
@@ -16,6 +17,7 @@ import {
   FeaturedProjects,
   GithubFooter,
   CursorChaser,
+  ConnectWithMe,
 } from "@/components";
 import { VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 
@@ -29,6 +31,7 @@ export default function Home() {
   useAboutPageScroll(contextRef);
   useAboutSecondTextScroll(contextRef);
   useFtProjsScrollEffects(contextRef);
+  // useconnectWMeScroll(contextRef);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -127,6 +130,7 @@ export default function Home() {
                 border={`solid`}
                 px={`1rem`}
                 cursor={`pointer`}
+                transform={`perspective(500px) rotateX(20deg)`}
               >
                 <Text fontSize={`1rem`}>Web Developer with the sauce.</Text>
               </Box>
@@ -147,13 +151,13 @@ export default function Home() {
         </VStack>
         <About />
         <FeaturedProjects />
+        <ConnectWithMe />
         <GithubFooter />
         <CursorChaser />
-        <Container
-          className="aboutPage-opener"
-        ></Container>
+        <Container className="aboutPage-opener"></Container>
         <Container className="aboutSecondText-opener"></Container>
         <Container className="ftProjs-opener"></Container>
+        {/* <Container className="connect-opener"></Container> */}
       </main>
     </>
   );
