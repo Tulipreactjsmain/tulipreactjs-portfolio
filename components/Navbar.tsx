@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
               <span>Projects</span>
             </ScrollLink>
             <a
-              href="https://drive.google.com/file/d/1MB5n-_wkcQ60HqYu535Jw0xDXmruVpzy/view?usp=sharing"
+              href="https://drive.google.com/file/d/18577UUe__PbuwpWPs6GCTiY7oe-7Y6xy/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "9px" }}
