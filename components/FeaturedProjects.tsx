@@ -19,11 +19,11 @@ const FeaturedProjects: React.FC = () => {
   const projectData: ProjectData[] = [
     {
       about:
-        "A complete full feature E-commerce web app built with react, nodeJs, express bootstrap and MongoDB.",
-      mobileImage: "/BuyPayMobileView.webp",
-      desktopImage: "/BuyPayDesktopView.webp",
-      websiteLink: "https://buynpay.vercel.app/",
-      githubLink: "https://github.com/Tulipreactjsmain/E-commerce",
+        "A software consulting platform crafted with Next.js, Sass, and Bootstrap. ",
+      mobileImage: "/stardeliteMobile.webp",
+      desktopImage: "/stardeliteLaptop.webp",
+      websiteLink: "https://stardelitesolutions.com",
+      githubLink: "https://github.com/Tulipreactjsmain/stardelite",
     },
     {
       about:
@@ -33,6 +33,15 @@ const FeaturedProjects: React.FC = () => {
       websiteLink: "https://rdh.club",
       githubLink: "https://github.com/Tulipreactjsmain/RDH_Academy",
     },
+    {
+      about:
+        "A complete full feature E-commerce web app built with react, nodeJs, express bootstrap and MongoDB.",
+      mobileImage: "/BuyPayMobileView.webp",
+      desktopImage: "/BuyPayDesktopView.webp",
+      websiteLink: "https://buynpay.vercel.app/",
+      githubLink: "https://github.com/Tulipreactjsmain/E-commerce",
+    },
+
     {
       about:
         "Task manager app built with react, nodeJs, express bootstrap and MongoDB.",
@@ -61,7 +70,9 @@ const FeaturedProjects: React.FC = () => {
           Featured Projects
         </Heading>
 
-        <Text pt={3} fontFamily={`'Inter', sans-serif`}>WEB DEVELOPER FOLIO / 2021 — 2023</Text>
+        <Text pt={3} fontFamily={`'Inter', sans-serif`}>
+          WEB DEVELOPER FOLIO / 2021 — 2023
+        </Text>
       </Box>
       <Box
         display={`flex`}
