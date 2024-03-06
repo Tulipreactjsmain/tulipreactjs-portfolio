@@ -77,7 +77,7 @@ const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
               </ScrollLink>
               <hr />
               <a
-                href="https://drive.google.com/file/d/19xEQEE-HyXqgDYSTMjWeXF7get9Tyaab/view?usp=sharing"
+                href="https://drive.google.com/file/d/1OPtTTUOp3fVTdJjZ93FHJz-ZwNqwOyN-/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: "flex", alignItems: "center", gap: "9px" }}
