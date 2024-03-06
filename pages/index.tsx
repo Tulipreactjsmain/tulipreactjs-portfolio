@@ -46,7 +46,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({ smoothWheel: true ,});
     function raf(time: any) {
       lenis.raf(time);
       requestAnimationFrame(raf);

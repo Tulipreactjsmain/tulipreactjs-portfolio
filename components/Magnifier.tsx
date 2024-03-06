@@ -31,7 +31,8 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
       const scrollPosition = window.scrollY;
       const maxScroll = document.body.scrollHeight - window.innerHeight;
       const normalizedScroll = Math.min(1, scrollPosition / maxScroll);
-      const newDegree = scrollDegree + normalizedScroll * (360 - scrollDegree);
+      const scalingFactor = 2; // Adjust the scaling factor as needed
+      const newDegree = normalizedScroll * 360 * scalingFactor;
 
       setScrollDegree(newDegree);
     };
@@ -68,7 +69,7 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
        <GiKite
           style={{
             position: "absolute",
-            left: `calc(80% - ${scrollDegree}px)`, 
+            left: `calc(90% - ${scrollDegree}px)`, 
             top: `calc(20% - 30px)`, 
             transform: `rotate(${scrollDegree}deg)`,
           }}
