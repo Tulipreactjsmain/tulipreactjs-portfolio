@@ -1,5 +1,5 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
-import Footer from "./Footer";
+import ConnectWithMe from "./ConnectWithMe";
 import FtProjectsLayout from "./FtProjectsLayout";
 import { useState } from "react";
 import ProjectDetail from "./ProjectDetail";
@@ -60,42 +60,55 @@ const FeaturedProjects: React.FC = () => {
 
   return (
     <FtProjectsLayout>
-      <Box>
-        <Heading
-          fontSize={{ base: `3xl`, md: `5xl`, lg: `5xl` }}
-          fontFamily={`PolySans Median`}
-          w={`50rem`}
-          maxW={`50vw`}
-        >
-          Featured Projects
-        </Heading>
-
-        <Text pt={3} fontFamily={`'Inter', sans-serif`}>
-          WEB DEVELOPER FOLIO / 2021 — 2023
-        </Text>
-      </Box>
       <Box
+        h={`100vh`}
         display={`flex`}
-        gap={{ base: `4` }}
-        justifyContent={`space-between`}
-        alignItems={{ base: `start`, md: `center`, lg: `center` }}
-        py={4}
-        overflowX={`scroll`}
-        w={`full`}
-        flexDirection={{ base: "column", md: "row", lg: "row" }}
+        flexDirection={`column`}
+        justifyContent={`center`}
+        opacity={1}
       >
-        <ProjectDetail
-          projectData={projectData}
-          currentProject={currentProject}
-          handlePrev={handlePrev}
-          handleNext={handleNext}
-        />
-        <ProjectImagePreview
-          projectData={projectData}
-          currentProject={currentProject}
-        />
+        <Box>
+          <Heading
+            fontSize={{ base: `3xl`, md: `5xl`, lg: `5xl` }}
+            fontFamily={`PolySans Median`}
+            w={`50rem`}
+            maxW={`50vw`}
+          >
+            Featured Projects
+          </Heading>
+
+          <Text pt={3} fontFamily={`'Inter', sans-serif`}>
+            WEB DEVELOPER FOLIO / 2021 — 2023
+          </Text>
+        </Box>
+        <Box h={"50vh"} overflowY={"scroll"}>
+          <Box className={"projs"}>
+            {projectData.map((project, index) => (
+              <Box
+                display={`flex`}
+                gap={{ base: `4` }}
+                justifyContent={`space-between`}
+                alignItems={{ base: `start`, md: `center`, lg: `center` }}
+                py={4}
+                w={`full`}
+                flexDirection={{ base: "column", md: "row", lg: "row" }}
+              >
+                <ProjectDetail
+                  projectData={projectData}
+                  currentProject={index}
+                  handlePrev={handlePrev}
+                  handleNext={handleNext}
+                />
+                <ProjectImagePreview
+                  projectData={projectData}
+                  currentProject={index}
+                />
+              </Box>
+            ))}
+          </Box>
+        </Box>
       </Box>
-      <Footer />
+      <ConnectWithMe />
     </FtProjectsLayout>
   );
 };

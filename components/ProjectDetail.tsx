@@ -1,7 +1,6 @@
 import { Flex, Text, Box, Link } from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa6";
 import { MdLanguage } from "react-icons/md";
-import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import { ProjectData } from "./FeaturedProjects";
 
 interface ProjectDetailProps {
@@ -24,18 +23,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
       gap={4}
       maxW={{ base: `full`, md: `350`, lg: `350` }}
     >
-      <Text fontSize={`small`} fontFamily={`'Inter', sans-serif`} className="gradient-text" >
+      <Text fontSize={`medium`} fontFamily={`'Inter', sans-serif`} className="gradient-text" >
         {projectData[currentProject]?.about}
       </Text>
-      <Box
-        display={`flex`}
-        justifyContent={`space-between`}
-        alignItems={`center`}
-        gap={2}
-        fontSize={`2xl`}
-        w={`full`}
-      >
-        <Flex gap={5}>
+      <Flex gap={5} fontSize={'3xl'}>
           <Link
             href={projectData[currentProject]?.githubLink}
             rel="noopener"
@@ -51,20 +42,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
             <MdLanguage />
           </Link>
         </Flex>
-        <Flex gap={5}>
-          {currentProject > 0 && (
-            <Box onClick={handlePrev}>
-              <GrLinkPrevious className="circle" />
-            </Box>
-          )}
-
-          {projectData.length - 1 > currentProject && (
-            <Box onClick={handleNext}>
-              <GrLinkNext className="circle" />
-            </Box>
-          )}
-        </Flex>
-      </Box>
     </Flex>
   );
 };

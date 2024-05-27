@@ -12,7 +12,6 @@ const FtProjectsLayout: React.FC<LayoutProps> = ({ children }) => {
       w={`100%`}
       display={`flex`}
       flexDirection={`column`}
-      justifyContent={`center`}
       alignItems={`center`}
       left={0}
       top={0}
@@ -20,20 +19,20 @@ const FtProjectsLayout: React.FC<LayoutProps> = ({ children }) => {
       position={`fixed`}
       zIndex={0}
       opacity={0}
-      h={`100vh`}
       color={`#7c7c6f`}
+      h={`100vh`}
     >
       <Box
         maxW={`95rem`}
         px={`3vw`}
         w={`full`}
-        h={`full`}
-        display={`flex`}
-        flexDirection={`column`}
-        justifyContent={`center`}
+        h={`100vh`}
+        overflowY={"visible"}
+        className={"moveToConnectPage"}
       >
         {children}
       </Box>
+      
     </Box>
   );
 };

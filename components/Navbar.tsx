@@ -21,9 +21,23 @@ const Navbar: React.FC = () => {
     });
   };
 
+  const scrollToConnect = () =>
+    scroll.scrollTo(13050, {
+      delay: 0,
+      spy: true,
+      smooth: true,
+      offset: -500,
+      duration: 1,
+    });
   return (
     <>
-      <HamburgerMenu isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+      <HamburgerMenu
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onClose={onClose}
+        scrollToConnect={scrollToConnect}
+        scrollToProjects={scrollToProjects}
+      />
       <Flex
         className="navBar"
         position={`fixed`}
@@ -33,6 +47,9 @@ const Navbar: React.FC = () => {
         left={0}
         top={0}
         flexDirection={`column`}
+        justifyContent="center"
+        maxW={`95rem`}
+        mx={"auto"}
         color={`#7c7c6f`}
         px={`3vw`}
       >
@@ -102,7 +119,7 @@ const Navbar: React.FC = () => {
                 border={`1px`}
                 fontWeight={`bold`}
                 fontSize={`small`}
-                onClick={scrollToProjects}
+                onClick={scrollToConnect}
               >
                 Connect
               </Button>
@@ -128,7 +145,7 @@ const Navbar: React.FC = () => {
             </Button>
           </Box>
         </Box>
-        <hr style={{borderBottom: "solid #42433d"}}/>
+        <hr style={{ borderBottom: "solid #42433d" }} />
       </Flex>
     </>
   );

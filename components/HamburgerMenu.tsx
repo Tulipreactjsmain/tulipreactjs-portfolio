@@ -18,21 +18,14 @@ interface hamburgerProps {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
+  scrollToConnect: () => void;
+  scrollToProjects: () => void;
 }
 
 const inter = Inter({ subsets: ["latin"], weight: "400" });
 
 const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
-  const { isOpen, onOpen, onClose } = props;
-  const scrollToProjects = () => {
-    scroll.scrollTo(9650, {
-      delay: 0,
-      spy: true,
-      smooth: true,
-      offset: -500,
-      duration: 1000,
-    });
-  };
+  const { isOpen, onOpen, onClose, scrollToProjects, scrollToConnect } = props;
 
   return (
     <>
@@ -55,7 +48,7 @@ const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
           transition={{ duration: 0.3 }}
           height={`30vh`}
         >
-          <ModalBody>
+          <ModalBody onClick={onClose}>
             <Box
               py={`1rem`}
               className={`${inter.className} navLinks`}
@@ -67,7 +60,10 @@ const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
             >
               <ScrollLink
                 to="projects"
-                onClick={scrollToProjects}
+                onClick={() => {
+                  scrollToProjects();
+                  onClose();
+                }}
                 style={{ display: "flex", alignItems: "center", gap: "9px" }}
               >
                 <span>
@@ -91,7 +87,14 @@ const HamburgerMenu: React.FC<hamburgerProps> = (props) => {
 
               <Box display={`flex`} alignItems={`center`} gap={`9px`}>
                 <FaConnectdevelop />
-                <Text onClick={scrollToProjects}>Connect</Text>
+                <Text
+                  onClick={() => {
+                    scrollToConnect();
+                    onClose();
+                  }}
+                >
+                  Connect
+                </Text>
               </Box>
             </Box>
           </ModalBody>

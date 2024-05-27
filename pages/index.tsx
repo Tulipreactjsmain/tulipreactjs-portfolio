@@ -6,6 +6,7 @@ import {
   useAboutPageScroll,
   useFtProjsScrollEffects,
   useAboutSecondTextScroll,
+  useprojectsScroll,
   useconnectWMeScroll,
 } from "@/hooks";
 import { TbSTurnDown } from "react-icons/tb";
@@ -31,7 +32,8 @@ export default function Home() {
   useAboutPageScroll(contextRef);
   useAboutSecondTextScroll(contextRef);
   useFtProjsScrollEffects(contextRef);
-  // useconnectWMeScroll(contextRef);
+  useprojectsScroll(contextRef);
+  useconnectWMeScroll(contextRef);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -157,7 +159,8 @@ export default function Home() {
         <Container className="aboutPage-opener"></Container>
         <Container className="aboutSecondText-opener"></Container>
         <Container className="ftProjs-opener"></Container>
-        {/* <Container className="connect-opener"></Container> */}
+        <Container className="projs-scroll"></Container>
+        <Container className="connect-opener"></Container>
       </main>
     </>
   );
