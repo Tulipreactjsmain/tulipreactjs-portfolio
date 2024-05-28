@@ -18,7 +18,7 @@ const ProjectImagePreview: React.FC<ProjectDetailProps> = ({
           rounded={20}
         >
           <Box
-            className="imgBox"
+            className="imgBox form-bg"
             position="absolute"
             content=""
             h="100%"

@@ -1,15 +1,15 @@
 import React from "react";
 
 interface svgProps {
-  displayValue: string
+  displayValue: string;
 }
-const GradientGithubIcon = ({displayValue}: svgProps) => {
+const GradientGithubIcon = ({ displayValue }: svgProps) => {
   return (
-    <div style={{ position: "relative",  padding:0, margin:0, height:"1em"}}>
+    <div style={{ position: "relative", padding: 0, margin: 0, height: "1em" }}>
       {/* Shadow */}
       <svg
         stroke="none"
-        fill="#101419" 
+        fill="#101419"
         viewBox="0 0 256 256"
         height="1em"
         width="1em"
@@ -19,7 +19,7 @@ const GradientGithubIcon = ({displayValue}: svgProps) => {
           left: "5px",
           top: "5px",
           filter: "blur(1px)",
-          display:`${displayValue}`
+          display: `${displayValue}`,
         }}
       >
         <path d="M216,104v8a56.06,56.06,0,0,1-48.44,55.47A39.8,39.8,0,0,1,176,192v40a8,8,0,0,1-8,8H104a8,8,0,0,1-8-8V216H72a40,40,0,0,1-40-40A24,24,0,0,0,8,152a8,8,0,0,1,0-16,40,40,0,0,1,40,40,24,24,0,0,0,24,24H96v-8a39.8,39.8,0,0,1,8.44-24.53A56.06,56.06,0,0,1,56,112v-8a58.14,58.14,0,0,1,7.69-28.32A59.78,59.78,0,0,1,69.07,28,8,8,0,0,1,76,24a59.75,59.75,0,0,1,48,24h24a59.75,59.75,0,0,1,48-24,8,8,0,0,1,6.93,4,59.74,59.74,0,0,1,5.37,47.68A58,58,0,0,1,216,104Z" />
@@ -51,6 +51,11 @@ const GradientGithubIcon = ({displayValue}: svgProps) => {
               offset="100%"
               style={{ stopColor: "#fffff0", stopOpacity: 1 }}
             />
+            <stop offset="0%" style={{ stopColor: "rgb(255, 203, 71)" }} />
+            <stop offset="25%" style={{ stopColor: "rgb(210, 248, 180)" }} />
+            <stop offset="50%" style={{ stopColor: "rgb(255, 203, 71)" }} />
+            <stop offset="75%" style={{ stopColor: "rgb(255, 92, 92)" }} />
+            <stop offset="100%" style={{ stopColor: "rgb(209, 165, 228)" }} />
           </linearGradient>
         </defs>
 

@@ -11,6 +11,7 @@ import GithubFooter from "./GithubFooter";
 import CursorChaser from "./CursorChaser";
 import HeroNameInDesktop from "./HeroNameInDesktop";
 import HeroNameInMobile from "./HeroNameInMobile";
+import CustomGikite  from "./CustomGikite";
 
 export {
   HeadMetaData,
@@ -26,4 +27,5 @@ export {
   HeroNameInDesktop,
   HeroNameInMobile,
   ConnectWithMe,
+  CustomGikite,
 };

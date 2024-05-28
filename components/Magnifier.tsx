@@ -2,6 +2,7 @@ import React, { useState, useEffect, ReactNode } from "react";
 import PropTypes from "prop-types";
 import { Box, Text } from "@chakra-ui/react";
 import { GiKite } from "react-icons/gi";
+import { CustomGikite } from ".";
 interface MagnifierProps {
   children: ReactNode;
 }
@@ -66,15 +67,8 @@ const Magnifier: React.FC<MagnifierProps> = ({ children }) => {
         opacity={0.4}
         bgGradient={linearGradient}
       ></Box>
-       <GiKite
-          style={{
-            position: "absolute",
-            left: `calc(90% - ${scrollDegree}px)`, 
-            top: `calc(20% - 30px)`, 
-            transform: `rotate(${scrollDegree}deg)`,
-          }}
-          size={60} 
-        />
+
+      <CustomGikite scrollDegree={scrollDegree} />
       {children}
       <Box display={{ base: "none", md: "none", lg: "block" }}>
         {showMagnifier ? (

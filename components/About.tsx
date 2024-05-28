@@ -61,7 +61,6 @@ const About: React.FC = () => {
                   w={`50rem`}
                   maxW={`70vw`}
                   className="aboutIntroText"
-                  fontFamily={`PolySans Median`}
                   id="aboutIntroText"
                   pt={10}
                   pb={20}
@@ -76,7 +75,6 @@ const About: React.FC = () => {
                   opacity={0}
                   position={`static`}
                   className="aboutSecondText"
-                  fontFamily={`PolySans Median`}
                   pt={10}
                   pb={20}
                   zIndex={0}

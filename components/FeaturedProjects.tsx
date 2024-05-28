@@ -68,14 +68,14 @@ const FeaturedProjects: React.FC = () => {
         opacity={1}
       >
         <Box>
-          <Heading
+          <Text
             fontSize={{ base: `3xl`, md: `5xl`, lg: `5xl` }}
             fontFamily={`PolySans Median`}
             w={`50rem`}
             maxW={`50vw`}
           >
             Featured Projects
-          </Heading>
+          </Text>
 
           <Text pt={3} fontFamily={`'Inter', sans-serif`}>
             WEB DEVELOPER FOLIO / 2021 — 2023
