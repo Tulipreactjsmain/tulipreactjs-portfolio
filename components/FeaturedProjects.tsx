@@ -81,7 +81,7 @@ const FeaturedProjects: React.FC = () => {
             WEB DEVELOPER FOLIO / 2021 — 2023
           </Text>
         </Box>
-        <Box h={"50vh"} overflowY={"scroll"}>
+        <Box className="scroll-box" h={"50vh"} overflowY={"hidden"} >
           <Box className={"projs"}>
             {projectData.map((project, index) => (
               <Box
