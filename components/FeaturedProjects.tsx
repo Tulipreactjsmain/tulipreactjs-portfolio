@@ -4,53 +4,14 @@ import FtProjectsLayout from "./FtProjectsLayout";
 import { useState } from "react";
 import ProjectDetail from "./ProjectDetail";
 import ProjectImagePreview from "./ProjectImagePreview";
+import projectsData from "@/database/projectsData";
 
-export interface ProjectData {
-  about: string;
-  mobileImage: string;
-  desktopImage: string;
-  websiteLink: string;
-  githubLink: string;
-}
+
 
 const FeaturedProjects: React.FC = () => {
   const [currentProject, setCurrentProject] = useState<number>(0);
 
-  const projectData: ProjectData[] = [
-    {
-      about:
-        "A software consulting platform crafted with Next.js, Sass, and Bootstrap. ",
-      mobileImage: "/stardeliteMobile.webp",
-      desktopImage: "/stardeliteLaptop.webp",
-      websiteLink: "https://stardelitesolutions.com",
-      githubLink: "https://github.com/Tulipreactjsmain/stardelite",
-    },
-    {
-      about:
-        "@2022 Collaborative NFT minting project built with (python, solidity, javascript, react, SCSS & Chakra UI). Founded by me.",
-      mobileImage: "/RDHMobileView.webp",
-      desktopImage: "/RDHLaptopview.webp",
-      websiteLink: "https://rdh.club",
-      githubLink: "https://github.com/Tulipreactjsmain/RDH_Academy",
-    },
-    {
-      about:
-        "A complete full feature E-commerce web app built with react, nodeJs, express bootstrap and MongoDB.",
-      mobileImage: "/BuyPayMobileView.webp",
-      desktopImage: "/BuyPayDesktopView.webp",
-      websiteLink: "https://buynpay.vercel.app/",
-      githubLink: "https://github.com/Tulipreactjsmain/E-commerce",
-    },
-
-    {
-      about:
-        "Task manager app built with react, nodeJs, express bootstrap and MongoDB.",
-      mobileImage: "/TaskDutyMobileView.webp",
-      desktopImage: "/TaskdutyLAptopView.webp",
-      websiteLink: "https://taskduty.vercel.app",
-      githubLink: "https://github.com/Tulipreactjsmain/Task-Duty-App",
-    },
-  ];
+  
   function handleNext() {
     setCurrentProject((prevProj) => prevProj + 1);
   }
@@ -81,9 +42,19 @@ const FeaturedProjects: React.FC = () => {
             WEB DEVELOPER FOLIO / 2021 — 2023
           </Text>
         </Box>
-        <Box className="scroll-box" h={"50vh"} overflowY={"hidden"} >
-          <Box className={"projs"}>
-            {projectData.map((project, index) => (
+        <Box
+          className="scroll-box"
+          h={"50vh"}
+          overflowY={"hidden"}
+          // backgroundColor={"yellow"}
+          position="relative"
+        >
+          <Box
+            className={"projs"}
+            position={"absolute"}
+            w={'full'}
+          >
+            {projectsData.map((project, index) => (
               <Box
                 display={`flex`}
                 gap={{ base: `4` }}
@@ -94,13 +65,13 @@ const FeaturedProjects: React.FC = () => {
                 flexDirection={{ base: "column", md: "row", lg: "row" }}
               >
                 <ProjectDetail
-                  projectData={projectData}
+                  projectsData={projectsData}
                   currentProject={index}
                   handlePrev={handlePrev}
                   handleNext={handleNext}
                 />
                 <ProjectImagePreview
-                  projectData={projectData}
+                  projectsData={projectsData}
                   currentProject={index}
                 />
               </Box>

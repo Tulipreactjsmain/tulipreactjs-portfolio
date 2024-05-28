@@ -18,7 +18,6 @@ import {
   FeaturedProjects,
   GithubFooter,
   CursorChaser,
-  ConnectWithMe,
 } from "@/components";
 import { VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 
@@ -153,7 +152,6 @@ export default function Home() {
         </VStack>
         <About />
         <FeaturedProjects />
-        <ConnectWithMe />
         <GithubFooter />
         <CursorChaser />
         <Container className="aboutPage-opener"></Container>

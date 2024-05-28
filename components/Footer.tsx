@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
         <span style={{ fontSize: "1.2rem" }}>
           <PiCopyrightLight />
         </span>
-        <span>Solomon Adesanya 2023.</span>
+        <span>Solomon Adesanya 2024.</span>
       </Flex>
       <Flex gap={5} w={`fit-content`} alignItems={`center`} textAlign={`start`}>
         {/* <Text>Connect with me</Text> */}

@@ -32,7 +32,6 @@ const FtProjectsLayout: React.FC<LayoutProps> = ({ children }) => {
       >
         {children}
       </Box>
-      
     </Box>
   );
 };

@@ -1,12 +1,12 @@
 import { Image, Box, Link } from "@chakra-ui/react";
-import { ProjectData } from "./FeaturedProjects";
+import { ProjectData } from "../database/projectsData";
 
 interface ProjectDetailProps {
-  projectData: ProjectData[];
+  projectsData: ProjectData[];
   currentProject: number;
 }
 const ProjectImagePreview: React.FC<ProjectDetailProps> = ({
-  projectData,
+  projectsData,
   currentProject,
 }) => {
   return (
@@ -31,27 +31,16 @@ const ProjectImagePreview: React.FC<ProjectDetailProps> = ({
             h={`full`}
             w={`full`}
             display={`block`}
-            href={projectData[currentProject]?.websiteLink}
+            href={projectsData[currentProject]?.websiteLink}
             rel="noopener"
             target="_blank"
           >
             <Box position={`relative`} top={20} left={20} h={`full`}>
               <Image
-                src={projectData[currentProject]?.desktopImage}
+                src={projectsData[currentProject]?.desktopImage}
                 w={`full`}
                 h={`full`}
                 alt="Project preview"
-              />
-              <Image
-                src={projectData[currentProject].mobileImage}
-                alt="Project preview"
-                w={`20%`}
-                h={{ base: `70%`, md: `70%`, lg: `60%` }}
-                position={`absolute`}
-                zIndex={3}
-                bottom={0}
-                left={15}
-                loading="lazy"
               />
             </Box>
           </Link>

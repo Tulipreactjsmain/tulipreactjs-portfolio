@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
   };
 
   const scrollToConnect = () =>
-    scroll.scrollTo(13050, {
+    scroll.scrollTo(16050, {
       delay: 0,
       spy: true,
       smooth: true,

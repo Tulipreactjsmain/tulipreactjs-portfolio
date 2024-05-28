@@ -57,7 +57,7 @@ const ConnectWithMe: React.FC = () => {
               zIndex: 1,
             }}
           ></Box>
-          <Flex direction="column" position={"static"} zIndex={2}>
+          <Flex as={'form'} direction="column" position={"static"} zIndex={2}>
             <Text fontSize="3xl" mb={4} textAlign="center">
               Connect with me
             </Text>

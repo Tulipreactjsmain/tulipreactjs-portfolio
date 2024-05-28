@@ -45,7 +45,7 @@ body {
 }
 
 hr {
-  border: solid #E7DFC6 1px !important;
+  border: solid #e7dfc6 1px !important;
   opacity: 0.1;
 }
 
@@ -100,7 +100,6 @@ a {
 .update-navRule {
   border-bottom: 0 !important;
 }
-
 
 .update-nav-links {
   a:hover {
@@ -194,7 +193,7 @@ a {
 }
 
 .update-cursorChaser {
-  background-color: #BFCC94 !important;
+  background-color: #bfcc94 !important;
 }
 
 .slog {
@@ -232,17 +231,16 @@ a {
   z-index: 50000 !important;
 }
 
-
 .form-bg {
   background: linear-gradient(
     135deg,
-    #e4b9f4, 
-    #d2f8b4, 
+    #e4b9f4,
+    #d2f8b4,
     #f6e17a,
-    #e4b9f4, 
-    #a2e8f3, 
-    #a2e8f3, 
-    #d1a5e4  
+    #e4b9f4,
+    #a2e8f3,
+    #a2e8f3,
+    #d1a5e4
   );
   background-size: 150% 150%;
   animation: gradientAnimation 10s ease infinite;
@@ -270,13 +268,13 @@ textarea::placeholder {
 }
 
 .imgBox {
-  box-shadow: 0px -198px 93px -43px rgba(0,0,0,0.91) inset;
--webkit-box-shadow: 0px -198px 93px -43px rgba(0,0,0,0.91) inset;
--moz-box-shadow: 0px -198px 93px -43px rgba(0,0,0,0.91) inset;
+  box-shadow: 0px -198px 93px -43px rgba(0, 0, 0, 0.91) inset;
+  -webkit-box-shadow: 0px -198px 93px -43px rgba(0, 0, 0, 0.91) inset;
+  -moz-box-shadow: 0px -198px 93px -43px rgba(0, 0, 0, 0.91) inset;
 }
 
 .gradient-text {
-  background: linear-gradient(45deg, #F39B6D, #548687);
+  background: linear-gradient(45deg, #f39b6d, #548687);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -288,7 +286,6 @@ textarea::placeholder {
   padding: 3px;
   cursor: pointer;
 }
-
 
 .scroll-container {
   display: block;
@@ -309,15 +306,15 @@ textarea::placeholder {
   font-size: 5em;
 }
 
+.scroll-box {
+  scroll-behavior: smooth !important;
+}
 
 @media (max-width: 767px) {
   .surname {
     justify-content: flex-start !important;
   }
 }
-
-
-
 
 @keyframes shineAnimation {
 }

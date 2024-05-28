@@ -5,31 +5,31 @@ import { useEffect } from "react";
 const projectsScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
   useEffect(() => {
     const projectsContainer = contextRef?.current?.querySelector("div.projs");
-    let projectsContainerHeight: number;
+
     const scrollBoxRef = contextRef?.current?.querySelector(
       "div.scroll-box"
     ) as HTMLElement;
 
-    if (projectsContainer) {
-      projectsContainerHeight =
-        projectsContainer.getBoundingClientRect().height;
-    } else {
-      console.log("projectsContainer is not defined");
+    if (!projectsContainer || !scrollBoxRef) {
+      console.log("projectsContainer or scrollBoxRef is not defined");
+      return;
     }
-
+    const projectsContainerHeight: number =
+      projectsContainer.getBoundingClientRect().height;
+    const scrollBoxHeight = scrollBoxRef.getBoundingClientRect().height;
     let ctx = gsap.context(() => {
-      const timeline =gsap.timeline({
+      const timeline = gsap.timeline({
         onUpdate: () => {
           if (scrollBoxRef) {
             const progress = timeline.progress();
-            const maxScrollTop = projectsContainerHeight - scrollBoxRef.clientHeight;
+            const maxScrollTop = projectsContainerHeight - scrollBoxHeight;
             scrollBoxRef.scrollTop = maxScrollTop * progress;
           }
-        }
+        },
       });
       const tween1 = gsap.to(".projs", {
-        y: -projectsContainerHeight + 500,
-        ease: `power4.out`,
+        y: -(projectsContainerHeight - scrollBoxHeight),
+        ease: `easeInOut`,
         delay: 0,
       });
 
@@ -37,32 +37,12 @@ const projectsScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
 
       ScrollTrigger.create({
         trigger: ".projs-scroll",
-        start: "top+=-500 bottom",
+        start: "top bottom",
         end: `bottom+=${projectsContainerHeight} bottom`,
-        scrub: 1,
+        scrub: 2,
         pin: true,
         // markers: true,
         animation: timeline,
-        // onEnter: () => {
-        //   if (scrollBoxRef) {
-        //     scrollBoxRef.style.overflowY = "scroll";
-        //   }
-        // },
-        // onLeave: () => {
-        //   if (scrollBoxRef) {
-        //     scrollBoxRef.style.overflowY = "hidden";
-        //   }
-        // },
-        // onEnterBack: () => {
-        //   if (scrollBoxRef) {
-        //     scrollBoxRef.style.overflowY = "scroll";
-        //   }
-        // },
-        // onLeaveBack: () => {
-        //   if (scrollBoxRef) {
-        //     scrollBoxRef.style.overflowY = "hidden";
-        //   }
-        // },
       });
     }, contextRef);
 
