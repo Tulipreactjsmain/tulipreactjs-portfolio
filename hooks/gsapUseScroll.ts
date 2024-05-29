@@ -65,7 +65,7 @@ const useScroll = (
       ScrollTrigger.create({
         trigger: ".vStack",
         start: "bottom bottom",
-        end: "100% 30% ",
+        end: "bottom 30% ",
         pin: true,
         animation: timeline,
         scrub: 1,

@@ -19,6 +19,7 @@ import {
   GithubFooter,
   CursorChaser,
 } from "@/components";
+
 import { VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 
 export default function Home() {
@@ -47,7 +48,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const lenis = new Lenis({ smoothWheel: true ,});
+    const lenis = new Lenis({ smoothWheel: true });
     function raf(time: any) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -66,18 +67,21 @@ export default function Home() {
           id="hero"
           className="section vStack"
           gap={0}
-          alignItems={`flex-start`}
+          alignItems={`center`}
+          justifyContent={"center"}
           pt={{ base: `9rem`, md: `15rem`, lg: `9rem` }}
-          h={`125vh`}
+          pb={"2.1875rem"}
+          minH={"100vh"}
           position={`static`}
           zIndex={1000}
           w={`full`}
+          maxW={"100vw"}
         >
           <Box w={`full`}>
             <Box
               position={`relative`}
               boxShadow={`lg white`}
-              className="introText"
+              className="introText container"
             >
               <span
                 style={{ padding: "2px", opacity: 0 }}
@@ -99,7 +103,7 @@ export default function Home() {
           </Box>
           <Box
             w={`full`}
-            className="title"
+            className="title container"
             pt={{ base: "0", md: `2rem`, lg: `2rem` }}
           >
             <Text
@@ -145,7 +149,8 @@ export default function Home() {
                 gap={20}
                 fontSize={`xl`}
               >
-                <Text>Sroll down</Text> <TbSTurnDown />
+                <Text>Sroll down</Text>
+                <TbSTurnDown />
               </Box>
             </Flex>
           </Box>

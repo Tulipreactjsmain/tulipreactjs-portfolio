@@ -57,7 +57,6 @@ const useAboutPageScroll = (
 
         ScrollTrigger.create({
           trigger: ".aboutPage-opener",
-          // trigger: ".vStack",
           start: "top bottom",
           end: "bottom+=900vh 30%",
           pin:true,

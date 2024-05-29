@@ -7,7 +7,7 @@ const HeroNameInDesktop: React.FC = () => {
   return (
     <Box className="name" opacity={0}>
               <Box
-                className="polySans"
+                className="polySans container "
                 display={{ base: "none", md: "block", lg: "block" }}
                 // as={`h1`}
                 width={"100%"}

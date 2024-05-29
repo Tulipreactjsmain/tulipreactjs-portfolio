@@ -23,12 +23,12 @@ const FtProjectsLayout: React.FC<LayoutProps> = ({ children }) => {
       h={`100vh`}
     >
       <Box
-        maxW={`95rem`}
-        px={`3vw`}
+        // maxW={`95rem`}
+        // px={`3vw`}
         w={`full`}
         h={`100vh`}
         overflowY={"visible"}
-        className={"moveToConnectPage"}
+        className={"moveToConnectPage container"}
       >
         {children}
       </Box>

@@ -12,7 +12,7 @@ const projectsData: ProjectData[] = [
     mobileImage: "/stardeliteMobile.webp",
     desktopImage:
       "https://res.cloudinary.com/techbro/image/upload/v1716908753/Desktop_-_6_ftfayx.png",
-    websiteLink: "https://stardelitesolutions.com",
+    websiteLink: "https://www.stardelitesolutions.com/",
     githubLink: "https://github.com/Tulipreactjsmain/stardelite",
   },
   {
@@ -34,7 +34,8 @@ const projectsData: ProjectData[] = [
     githubLink: "https://github.com/Tulipreactjsmain/E-commerce",
   },
   {
-    about: "A real-time messaging app built using Flutter, Firebase Authentication, and Cloud Firestore.",
+    about:
+      "A real-time messaging app built using Flutter, Firebase Authentication, and Cloud Firestore.",
     mobileImage: "",
     desktopImage:
       "https://res.cloudinary.com/techbro/image/upload/v1716908754/Desktop_-_43_bvwgtc.png",
@@ -53,7 +54,8 @@ const projectsData: ProjectData[] = [
   },
 
   {
-    about: "A mobile application built with Flutter, dart and Flutter Provider.",
+    about:
+      "A mobile application built with Flutter, dart and Flutter Provider.",
     mobileImage: "",
     desktopImage:
       "https://res.cloudinary.com/techbro/image/upload/v1716908753/Desktop_-_44_kcke6u.png",
@@ -70,7 +72,8 @@ const projectsData: ProjectData[] = [
     githubLink: "https://github.com/Tulipreactjsmain/bitcoin_ticker_app",
   },
   {
-    about: "CRUD (Create, Read, Update, Delete) web app for managing book records. Built using PHP, HTML, CSS, SQL, AWS and Bootstrap.",
+    about:
+      "CRUD (Create, Read, Update, Delete) web app for managing book records. Built using PHP, HTML, CSS, SQL, AWS and Bootstrap.",
     mobileImage: "",
     desktopImage:
       "https://res.cloudinary.com/techbro/image/upload/v1716908752/Desktop_-_40_uy4jvc.png",
@@ -78,7 +81,8 @@ const projectsData: ProjectData[] = [
     githubLink: "https://github.com/Tulipreactjsmain/crud-app",
   },
   {
-    about: "A brief interactive website for myself. Built with NextJs, Chakra UI, GSAP, SCSS, Typescript.",
+    about:
+      "A brief interactive website for myself. Built with NextJs, Chakra UI, GSAP, SCSS, Typescript.",
     mobileImage: "",
     desktopImage:
       "https://res.cloudinary.com/techbro/image/upload/v1716908752/Desktop_-_42_hxrm2q.png",
@@ -89,7 +93,8 @@ const projectsData: ProjectData[] = [
     about:
       "This is a simple calculator web application built using HTML, CSS, and JavaScript (without shortcuts).",
     mobileImage: "",
-    desktopImage: "https://res.cloudinary.com/techbro/image/upload/v1716909634/Desktop_-_46_lvjf2m.png",
+    desktopImage:
+      "https://res.cloudinary.com/techbro/image/upload/v1716909634/Desktop_-_46_lvjf2m.png",
     websiteLink: "https://tulipreactjsmain.github.io/Kreativestorm4th/",
     githubLink: "https://github.com/Tulipreactjsmain/Kreativestorm4th",
   },

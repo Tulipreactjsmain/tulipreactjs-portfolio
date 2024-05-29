@@ -6,12 +6,9 @@ import ProjectDetail from "./ProjectDetail";
 import ProjectImagePreview from "./ProjectImagePreview";
 import projectsData from "@/database/projectsData";
 
-
-
 const FeaturedProjects: React.FC = () => {
   const [currentProject, setCurrentProject] = useState<number>(0);
 
-  
   function handleNext() {
     setCurrentProject((prevProj) => prevProj + 1);
   }
@@ -49,13 +46,10 @@ const FeaturedProjects: React.FC = () => {
           // backgroundColor={"yellow"}
           position="relative"
         >
-          <Box
-            className={"projs"}
-            position={"absolute"}
-            w={'full'}
-          >
+          <Box className={"projs"} position={"absolute"} w={"full"}>
             {projectsData.map((project, index) => (
               <Box
+                key={index}
                 display={`flex`}
                 gap={{ base: `4` }}
                 justifyContent={`space-between`}

@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
         scrollToProjects={scrollToProjects}
       />
       <Flex
-        className="navBar"
+        className="navBar container container--wide"
         position={`fixed`}
         zIndex={5000}
         w={`full`}
@@ -48,10 +48,10 @@ const Navbar: React.FC = () => {
         top={0}
         flexDirection={`column`}
         justifyContent="center"
-        maxW={`95rem`}
-        mx={"auto"}
+        // maxW={`95rem`}
+        // mx={"auto"}
         color={`#7c7c6f`}
-        px={`3vw`}
+        // px={`3vw`}
       >
         <Box></Box>
         <Box

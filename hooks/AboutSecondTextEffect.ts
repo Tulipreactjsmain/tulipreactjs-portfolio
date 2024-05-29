@@ -13,7 +13,6 @@ const useAboutSecondTextScroll = (
 
       const tween1 = gsap.to(".aboutSecondText", {
         duration: 0.001,
-        // ease: "power4.inOut",
         delay: 0,
         opacity: 1,
       });
@@ -21,7 +20,6 @@ const useAboutSecondTextScroll = (
 
       ScrollTrigger.create({
         trigger: ".aboutSecondText-opener",
-        // start: "bottom+=900vh 30%",
         start: "top bottom",
         end: "bottom+=1700vh 30%",
         pin: true,

@@ -5,7 +5,7 @@ import { GradientGithubIcon } from ".";
 
 const HeroNameInMobile: React.FC = () => {
   return <Box
-  className="name2"
+  className="name2 container"
   display={{ base: "block", md: "none", lg: "none" }}
   width={"100%"}
   fontSize={"13.2vw"}

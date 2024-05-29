@@ -20,9 +20,7 @@ const ConnectWithMe: React.FC = () => {
       className="connect"
       id="connect"
       w={`full`}
-      h={`full`}
       minH={"100vh"}
-      // color={`#7c7c6f`}
       justifyContent={"center"}
       alignItems="center"
     >

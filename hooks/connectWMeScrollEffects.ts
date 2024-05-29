@@ -8,7 +8,7 @@ const useconnectWMeScroll = (
   contextRef: React.RefObject<HTMLDivElement | null>
 ) => {
   useEffect(() => {
-    const connectContainer = contextRef?.current?.querySelector("div.projs");
+    const connectContainer = contextRef?.current?.querySelector("div.connect");
     let connectContainerHeight: number;
 
     if (connectContainer) {
@@ -31,7 +31,7 @@ const useconnectWMeScroll = (
       ScrollTrigger.create({
         trigger: ".connect-opener",
         start: "top bottom",
-        end: `bottom+=${connectContainerHeight} bottom`,
+        end: `bottom+=${(connectContainerHeight - 100)} bottom`,
         scrub: 1,
         pin: true,
         // markers: true,

@@ -9,7 +9,7 @@ const CustomGikite: React.FC<CustomGikiteProps> = ({ scrollDegree }) => {
     <svg
       stroke="currentColor"
       //   fill="url(#gradient)"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 512 512"
       style={{
         position: "absolute",
