@@ -19,29 +19,29 @@ const projectsScroll = (contextRef: React.RefObject<HTMLDivElement | null>) => {
     const scrollBoxHeight = scrollBoxRef.getBoundingClientRect().height;
     const maxScrollTop = projectsContainerHeight - scrollBoxHeight;
 
-    const smoothScroll = (targetScrollTop: number) => {
-      const scroll = () => {
-        const scrollTop = scrollBoxRef.scrollTop;
-        const distance = targetScrollTop - scrollTop;
-        if (Math.abs(distance) > 1) {
-          scrollBoxRef.scrollTop = scrollTop + distance * 0.1;
-          requestAnimationFrame(scroll);
-        } else {
-          scrollBoxRef.scrollTop = targetScrollTop;
-        }
-      };
-      requestAnimationFrame(scroll);
-    };
+    // const smoothScroll = (targetScrollTop: number) => {
+    //   const scroll = () => {
+    //     const scrollTop = scrollBoxRef.scrollTop;
+    //     const distance = targetScrollTop - scrollTop;
+    //     if (Math.abs(distance) > 1) {
+    //       scrollBoxRef.scrollTop = scrollTop + distance * 0.1;
+    //       requestAnimationFrame(scroll);
+    //     } else {
+    //       scrollBoxRef.scrollTop = targetScrollTop;
+    //     }
+    //   };
+    //   requestAnimationFrame(scroll);
+    // };
 
     let ctx = gsap.context(() => {
       const timeline = gsap.timeline({
-        onUpdate: () => {
-          if (scrollBoxRef) {
-            const progress = timeline.progress();
-            const targetScrollTop = maxScrollTop * progress;
-            smoothScroll(targetScrollTop);
-          }
-        },
+        // onUpdate: () => {
+        //   if (scrollBoxRef) {
+        //     const progress = timeline.progress();
+        //     const targetScrollTop = maxScrollTop * progress;
+        //     smoothScroll(targetScrollTop);
+        //   }
+        // },
       });
       const tween1 = gsap.to(".projs", {
         y: -(projectsContainerHeight - scrollBoxHeight),
