@@ -1,6 +1,27 @@
-import { Box, Text,} from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { Magnifier } from ".";
+import { useLottie } from "lottie-react";
+import scrollLottie from "../lotties/scroll-lottie.json";
+import { CSSProperties } from "react";
+
 const About: React.FC = () => {
+
+
+
+
+  const options = {
+    animationData: scrollLottie,
+    loop: true,
+  };
+
+  const style: CSSProperties = {
+    width: "300px",
+    height: "80px",
+    margin: "0 auto",
+    color:"#B7AD8F"
+  };
+  const { View: lottieButton } = useLottie(options, style);
+
   return (
     <Box position={`relative`} color={`#B7AD8F`}>
       <Box
@@ -82,7 +103,7 @@ const About: React.FC = () => {
                   with a passion for Impeccable design.
                 </Text>
               </Box>
-
+              {lottieButton}
               <Box
                 className="square-box"
                 width={`10vw`}

@@ -19,10 +19,26 @@ import {
   GithubFooter,
   CursorChaser,
 } from "@/components";
+import { useLottie } from "lottie-react";
+import bouncingSpring from "../lotties/bouncingSpring.json";
+import { CSSProperties } from "react";
 
 import { VStack, Text, Box, Flex, Container } from "@chakra-ui/react";
 
 export default function Home() {
+  const options = {
+    animationData: bouncingSpring,
+    loop: true,
+  };
+
+  const style: CSSProperties = {
+    width: "500px",
+    height: "200px",
+    margin: "0 auto",
+    color: "#B7AD8F",
+  };
+  const { View: spring } = useLottie(options, style);
+
   const elementRef = useRef<HTMLDivElement | null>(null);
   const elementRefs: React.RefObject<HTMLDivElement>[] = [];
   const contextRef = elementRef;
@@ -77,7 +93,7 @@ export default function Home() {
           w={`full`}
           maxW={"100vw"}
         >
-          <Box w={`full`}>
+          <Box w={`full`} position={'relative'}>
             <Box
               position={`relative`}
               boxShadow={`lg white`}
@@ -96,6 +112,7 @@ export default function Home() {
                 className="hi"
               ></Text>
             </Box>
+            <Box  w={`full`}  position={"absolute"}>{spring}</Box>
             {/* Name in Desktop version */}
             <HeroNameInDesktop />
             {/* Name in mobile version */}
