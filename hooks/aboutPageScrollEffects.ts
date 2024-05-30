@@ -57,7 +57,7 @@ const useAboutPageScroll = (
 
         ScrollTrigger.create({
           trigger: ".aboutPage-opener",
-          start: "top bottom",
+          start: "top+=300 bottom",
           end: "bottom+=900vh 30%",
           pin:true,
           scrub: 0,

@@ -22,7 +22,7 @@ const FeaturedProjsPageEffects = (
       chars.forEach((char, index) => {
         const tween1 = gsap.to(`.ftchar${index}`, {
           opacity: 0,
-          // duration: 2.5,
+          duration: 0.5,
           ease: "power4.inOut",
           delay: 0.1 * index,
         });
@@ -40,7 +40,7 @@ const FeaturedProjsPageEffects = (
       ScrollTrigger.create({
         trigger: ".ftProjs-opener",
         start: "top bottom",
-        end: "bottom+=3500vh 30%",
+        end: "bottom+=700vh 30%",
         scrub: true,
         pin: true,
         // markers: true,

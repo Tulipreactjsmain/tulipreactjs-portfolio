@@ -21,7 +21,7 @@ const useAboutSecondTextScroll = (
       ScrollTrigger.create({
         trigger: ".aboutSecondText-opener",
         start: "top bottom",
-        end: "bottom+=1700vh 30%",
+        end: "bottom+=400vh 30%",
         pin: true,
         // markers: true,
         scrub: 0,
