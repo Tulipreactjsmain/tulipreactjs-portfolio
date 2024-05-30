@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const scrollToProjects = () => {
-    scroll.scrollTo(9650, {
+    scroll.scrollTo(4058, {
       delay: 0,
       spy: true,
       smooth: true,
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
               <span>Projects</span>
             </ScrollLink>
             <a
-              href="https://drive.google.com/file/d/1trIMc4hB-y5NfsPoxCXem35sy6o4JkfS/view?usp=sharing"
+              href="https://drive.google.com/file/d/1zxs0XQawMrA2Et14Eh4MtnuVqQrEv9Sv/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "9px" }}

@@ -42,7 +42,7 @@ export default function Home() {
   const elementRef = useRef<HTMLDivElement | null>(null);
   const elementRefs: React.RefObject<HTMLDivElement>[] = [];
   const contextRef = elementRef;
-  const [scrollY, setScrollY] = useState<number>(0);
+  // const [scrollY, setScrollY] = useState<number>(0);
 
   useScroll(contextRef);
   useAboutPageScroll(contextRef);
@@ -51,17 +51,19 @@ export default function Home() {
   useprojectsScroll(contextRef);
   useconnectWMeScroll(contextRef);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+  // useEffect(() => {
+    
+  //   const handleScroll = () => {
+  //     setScrollY(window.scrollY);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
 
   useEffect(() => {
     const lenis = new Lenis({ smoothWheel: true });
